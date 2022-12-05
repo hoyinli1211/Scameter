@@ -1,5 +1,5 @@
 selenium==4.7.0
 streamlit==0.73.0
 beautifulsoup4==4.9.0
-pandas==1.5.2
+pandas==1.4.1
 webdriver-manager
