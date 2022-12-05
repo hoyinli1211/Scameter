@@ -42,7 +42,7 @@ def scameterCheck(frame):
         #options.add_argument("--window-size=1920,1080")
         #options.add_argument('--no-sandbox')
         #options.add_argument('--disable-dev-shm-usage')
-        options.add_argument('-headless')
+        option.add_argument('-headless')
         service = Service(ChromeDriverManager().install())
         driver = webdriver.Chrome(options=option, service=service)
         #driver = webdriver.Chrome(ChromeDriverManager().install(), options=options)
