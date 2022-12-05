@@ -3,5 +3,6 @@ streamlit==0.73.0
 beautifulsoup4==4.9.0
 pandas==1.5.2
 webdriver-manager
+webdriver_manager
 openpyxl
 option
