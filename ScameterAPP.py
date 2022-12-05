@@ -81,7 +81,7 @@ if upload_file is not None:
     #Check the upload file extension and read the file to a dataframe using pandas
     if ext == '.xlsx':
         #xlsx
-        df = pandas.read_excel(upload_file)
+        df = pd.read_excel(upload_file)
     elif ext == '.csv':
         df = pd.read_csv(upload_file)
     else:
