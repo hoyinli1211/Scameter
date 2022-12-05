@@ -4,6 +4,3 @@ beautifulsoup4==4.9.0
 pandas==1.5.2
 webdriver-manager
 openpyxl
-GeckoDriverManager
-ChromeDriverManager
-WebDriverWait
