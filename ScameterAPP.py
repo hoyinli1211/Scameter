@@ -5,13 +5,6 @@
 import streamlit as st
 import os, sys
 
-#@st.experimental_singleton
-#def installff():
-#    os.system('sbase install geckodriver')
-#    os.system('ln -s /home/appuser/venv/lib/python3.7/site-packages/seleniumbase/drivers/geckodriver /home/appuser/venv/bin/geckodriver')
-
-#_ = installff()
-
 from selenium import webdriver
 from selenium.webdriver.firefox.service import Service
 from webdriver_manager.firefox import GeckoDriverManager
@@ -78,6 +71,8 @@ upload_file = st.file_uploader('Upload a file containing checklist data in xlsx/
 if upload_file is not None:
     #extension of file
     ext = os.path.splitext(upload_file.name)[1].lower()
+    st.write(upload_file.name)
+    st.write(ext)
     #Check the upload file extension and read the file to a dataframe using pandas
     if ext == '.xlsx':
         #xlsx
