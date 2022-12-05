@@ -1,6 +1,5 @@
 selenium==4.7.0
-streamlit-dev
-bs4-dev
+streamlit
 beautifulsoup4==4.9.0
 requests==2.24.0
 pandas-dev
