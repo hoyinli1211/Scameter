@@ -1,2 +1,13 @@
 selenium
 webdriver-manager
+streamlit
+pandas
+os
+sys
+re
+requests
+math
+numpy
+webdriver
+BeautifulSoup
+datetime
