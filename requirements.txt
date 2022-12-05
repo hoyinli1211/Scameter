@@ -6,3 +6,4 @@ webdriver-manager
 webdriver_manager
 openpyxl
 option
+seleniumbase
