@@ -43,8 +43,11 @@ def scameterCheck(frame):
         #options.add_argument('--no-sandbox')
         #options.add_argument('--disable-dev-shm-usage')
         option.add_argument('-headless')
-        service = Service(ChromeDriverManager().install())
-        driver = webdriver.Chrome(options=option, service=service)
+        option.add_argument("--remote-debugging-port=2212")
+        option.add_argument('--no-sandbox')
+        option.add_argument('--disable-dev-shm-usage')
+        option.add_argument("start-maximized")
+        driver = webdriver.Chrome(service= Service(ChromeDriverManager().install()), options=option)
         #driver = webdriver.Chrome(ChromeDriverManager().install(), options=options)
         driver.implicitly_wait(0.5)
         
