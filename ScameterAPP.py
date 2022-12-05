@@ -38,7 +38,7 @@ def scameterCheck(frame):
         #    executable_path="/home/appuser/.conda/bin/geckodriver",
         #)
         
-        options = webdriver.ChromeOptions()
+        option = webdriver.ChromeOptions()
         #options.add_argument("--window-size=1920,1080")
         #options.add_argument('--no-sandbox')
         #options.add_argument('--disable-dev-shm-usage')
