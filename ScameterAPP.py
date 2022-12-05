@@ -78,9 +78,11 @@ def scameterCheck(frame):
 
 # Add a title and intro text
 st.title('Bulk checking on Scameter')
-st.text('This is a web app to allow users to perform bulk searching')
+st.text('This is a educational purpose web app to allow users to perform bulk searching of ADCC tool Scameter.')
+st.text('For details of the tool, please visit https://cyberdefender.hk/en-us/')
 
 #Creating a File Uploader within Streamlit
+st.header('STEP 1. Import the data with Column Value')
 upload_file = st.file_uploader('Upload a file containing checklist data in xlsx/csv format')
 
 if upload_file is not None:
@@ -96,8 +98,9 @@ if upload_file is not None:
         err = "<font color='red'>error: the file not in xlsx/csv format</font>"
         st.markdown(f'<p style= "color:#ff0000;">error: the file not in xlsx/csv format</p>', unsafe_allow_html=True)
     #Create a section for the dataframe
-    st.header('Import dataframe')
+    st.header('STEP 2. Review the imported dataframe')
     st.write(df)
+    st.header('STEP 3. Check the Scameter')
     
 if st.button('Check Scameter'):
     st.write(scameterCheck(df))
