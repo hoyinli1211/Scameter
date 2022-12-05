@@ -5,13 +5,6 @@
 import streamlit as st
 import os, sys
 
-@st.experimental_singleton
-def installff():
-    os.system('sbase install geckodriver')
-    os.system('ln -s /home/appuser/venv/lib/python3.7/site-packages/seleniumbase/drivers/geckodriver /home/appuser/venv/bin/geckodriver')
-
-_ = installff()
-
 from selenium import webdriver
 from selenium.webdriver.firefox.service import Service
 from webdriver_manager.firefox import GeckoDriverManager
@@ -38,11 +31,18 @@ def scameterCheck(frame):
         link = "https://cyberdefender.hk/en-us/"
         
         #Create instance of chrome
-        options = webdriver.ChromeOptions()
-        options.add_argument("--window-size=1920,1080")
-        options.add_argument('--no-sandbox')
-        options.add_argument('--disable-dev-shm-usage')
-        driver = webdriver.Chrome(ChromeDriverManager().install(), options=options)
+        firefoxOptions = Options()
+        firefoxOptions.add_argument("--headless")
+        driver = webdriver.Firefox(
+            options=firefoxOptions,
+            executable_path="/home/appuser/.conda/bin/geckodriver",
+        )
+        
+        #options = webdriver.ChromeOptions()
+        #options.add_argument("--window-size=1920,1080")
+        #options.add_argument('--no-sandbox')
+        #options.add_argument('--disable-dev-shm-usage')
+        #driver = webdriver.Chrome(ChromeDriverManager().install(), options=options)
         driver.implicitly_wait(0.5)
         
         for i in range(frame.count()[0]):
