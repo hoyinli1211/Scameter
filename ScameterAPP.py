@@ -64,7 +64,8 @@ def scameterCheck(frame):
             driver.find_element_by_id('search').send_keys(value)
 
             #Click the submit button
-            driver.find_element_by_xpath('//*[@id="post-3646"]/div/div/section[2]/div/div/div/div/div/form/div/div/div[1]/div[2]/div[2]').click()
+            #driver.find_element_by_xpath('//*[@id="post-3646"]/div/div/section[2]/div/div/div/div/div/form/div/div/div[1]/div[2]/div[2]').click()
+            driver.find_element(By.XPATH, '//*[@id="post-3646"]/div/div/section[2]/div/div/div/div/div/form/div/div/div[1]/div[2]/div[2]').click()
             time.sleep(5)
 
             Result = driver.find_element_by_xpath('/html/body/form/section/div[2]/div[1]/div[2]/h1').text
