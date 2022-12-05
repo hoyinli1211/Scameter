@@ -1,5 +1,4 @@
 selenium==4.7.0
 streamlit==0.73.0
 beautifulsoup4==4.9.0
-requests==2.24.0
 pandas==1.5.2
