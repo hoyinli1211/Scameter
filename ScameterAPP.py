@@ -43,7 +43,9 @@ def scameterCheck(frame):
         #options.add_argument('--no-sandbox')
         #options.add_argument('--disable-dev-shm-usage')
         options.add_argument('-headless')
-        driver = webdriver.Chrome(ChromeDriverManager().install(), options=options)
+        service = Service(ChromeDriverManager().install())
+        driver = webdriver.Chrome(options=option, service=service)
+        #driver = webdriver.Chrome(ChromeDriverManager().install(), options=options)
         driver.implicitly_wait(0.5)
         
         for i in range(frame.count()[0]):
