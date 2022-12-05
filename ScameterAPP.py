@@ -5,7 +5,7 @@
 import streamlit as st
 import os, sys
 
-@st.experimental_singleton
+st.experimental_singleton
 def installff():
   os.system('sbase install chromedriver')
   os.system('ln -s /home/appuser/venv/lib/python3.7/site-packages/seleniumbase/drivers/chromedriver /home/appuser/venv/bin/chromedriver')
