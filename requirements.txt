@@ -1,5 +1,4 @@
 selenium==4.7.0
-webdriver-manager
 streamlit-dev
 bs4-dev
 beautifulsoup4==4.9.0
