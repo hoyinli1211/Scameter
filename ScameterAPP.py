@@ -82,6 +82,7 @@ if upload_file is not None:
         st.markdown(f'<p style= "color:#ff0000;">error: the file not in xlsx/csv format</p>', unsafe_allow_html=True)
     #Create a section for the dataframe
     st.header('Import dataframe')
+    st.write(df)
     
 if st.button('Check Scameter'):
     st.write(scameterCheck(df))
