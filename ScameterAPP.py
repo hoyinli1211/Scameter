@@ -81,7 +81,8 @@ def scameterCheck(frame):
 
 # Add a title and intro text
 st.title('Bulk checking on Scameter')
-st.text('This is a educational purpose web app to allow users to perform bulk searching of ADCC tool Scameter.')
+st.text('This script is for educational purpose.')
+st.text('This Web app allow users to perform bulk searching of ADCC tool Scameter.')
 st.text('For details of the tool, please visit https://cyberdefender.hk/en-us/')
 
 #Creating a File Uploader within Streamlit
