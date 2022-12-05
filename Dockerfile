@@ -29,4 +29,4 @@ EXPOSE 8501
 
 COPY . .
 
-CMD ["streamlit", "run", "app.py"]
+CMD ["streamlit", "run", "ScameterAPP.py"]
