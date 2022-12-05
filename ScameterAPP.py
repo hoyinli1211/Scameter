@@ -31,18 +31,19 @@ def scameterCheck(frame):
         link = "https://cyberdefender.hk/en-us/"
         
         #Create instance of chrome
-        firefoxOptions = Options()
-        firefoxOptions.add_argument("--headless")
-        driver = webdriver.Firefox(
-            options=firefoxOptions,
-            executable_path="/home/appuser/.conda/bin/geckodriver",
-        )
+        #firefoxOptions = Options()
+        #firefoxOptions.add_argument("--headless")
+        #driver = webdriver.Firefox(
+        #    options=firefoxOptions,
+        #    executable_path="/home/appuser/.conda/bin/geckodriver",
+        #)
         
-        #options = webdriver.ChromeOptions()
+        options = webdriver.ChromeOptions()
         #options.add_argument("--window-size=1920,1080")
         #options.add_argument('--no-sandbox')
         #options.add_argument('--disable-dev-shm-usage')
-        #driver = webdriver.Chrome(ChromeDriverManager().install(), options=options)
+        options.add_argument('-headless')
+        driver = webdriver.Chrome(ChromeDriverManager().install(), options=options)
         driver.implicitly_wait(0.5)
         
         for i in range(frame.count()[0]):
