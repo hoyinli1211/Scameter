@@ -1,6 +1,8 @@
-selenium
+selenium-dev
 webdriver-manager
-streamlit
-beautifulsoup4==4.9.0
-pandas==1.5.2
-numpy==1.19.2
+streamlit-dev
+bs4-dev
+beautifulsoup4-dev
+pandas-dev
+numpy-dev
+requests-dev
