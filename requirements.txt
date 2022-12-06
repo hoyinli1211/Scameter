@@ -8,3 +8,4 @@ openpyxl
 option
 Image
 opencv-python
+FPDF
