@@ -84,7 +84,7 @@ def scameterCheck(frame):
             vImage.append(JobID + ".png")
             st.image(image)
             pdf.add_page()
-            pdf.image(JobID + ".png", x=20,y=30,w=40, type='PNG') 
+            pdf.image(JobID + ".png") 
             
             #Result = driver.find_element_by_xpath('/html/body/form/section/div[2]/div[1]/div[2]/h1').text
             #risk = driver.find_element_by_xpath('/html/body/form/section/div[2]/div[1]/div[1]/img').get_attribute("src").rsplit('/', 1)[-1]
@@ -139,7 +139,7 @@ if upload_file is not None:
     st.header('STEP 3. Check the Scameter')
     
 if st.button('Check Scameter'):
-    pdf = FPDF('P','mm','A4') #create an A-4 size pdf document
+    pdf = FPDF() #create an A-4 size pdf document
     st.write(scameterCheck(df))
     st.header('Return result')
     #Display and setup the return result dataframe
