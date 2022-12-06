@@ -26,6 +26,7 @@ import numpy as np
 import re
 from PIL import Image
 import glob
+import cv2
 import zipfile
 
 #required function
@@ -79,7 +80,8 @@ def scameterCheck(frame):
             driver.get_screenshot_as_file(JobID + ".png")
             image = Image.open(JobID + ".png")
             image.save(JobID + ".png")
-            vImage = vImage.append(image.save(JobID + ".png"))
+            vImage = vImage.append(cv2.imread(JobID + ".png"))
+            st.write(vImage)
             st.image(image)
             
             #Result = driver.find_element_by_xpath('/html/body/form/section/div[2]/div[1]/div[2]/h1').text
