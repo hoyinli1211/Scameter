@@ -67,10 +67,15 @@ def scameterCheck(frame):
             #driver.find_element_by_xpath('//*[@id="post-3646"]/div/div/section[2]/div/div/div/div/div/form/div/div/div[1]/div[2]/div[2]').click()
             driver.find_element(By.XPATH, '//*[@id="post-3646"]/div/div/section[2]/div/div/div/div/div/form/div/div/div[1]/div[2]/div[2]').click()
             time.sleep(5)
-
+            
+            driver.save_screenshot(i + "_"i + "_" + value + ".png")
+            image = Image.open(i + "_"i + "_" + value + ".png")
+            st.image(image)
+            
             #Result = driver.find_element_by_xpath('/html/body/form/section/div[2]/div[1]/div[2]/h1').text
             #risk = driver.find_element_by_xpath('/html/body/form/section/div[2]/div[1]/div[1]/img').get_attribute("src").rsplit('/', 1)[-1]
-            Result = driver.find_element(By.XPATH, '/html/body/form/section/div[2]/div[1]/div[2]/h1').getText()
+            #Result = driver.find_element(By.XPATH, '/html/body/form/section/div[2]/div[1]/div[2]/h1').getText()
+            Result = ""
             risk = driver.find_element(By.XPATH, '/html/body/form/section/div[2]/div[1]/div[1]/img').get_attribute("src").rsplit('/', 1)[-1]
             RiskRating = re.sub("_en.webp", "", risk)
             
