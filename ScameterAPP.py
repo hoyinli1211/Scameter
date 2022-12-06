@@ -81,6 +81,7 @@ def scameterCheck(frame):
             image = Image.open(JobID + ".png")
             image.save(JobID + ".png")
             vImage.append(JobID + ".png")
+            lImage.append(image)
             st.image(image)
             pdf.add_page()
             pdf.image(JobID + ".png", 60,120,w=120) 
@@ -139,6 +140,7 @@ if upload_file is not None:
 if st.button('Check Scameter'):
     pdf = FPDF() #create an A-4 size pdf document
     vImage = []
+    lImage = []
     st.write(scameterCheck(df))
     st.header('Return result')
     #Display and setup the return result dataframe
@@ -149,10 +151,13 @@ if st.button('Check Scameter'):
                         mime='text/csv')
     #Download button for the screenshot for audit purpose
     pdf2 = FPDF()
+    pdf3 = FPDF()
     for i in vImage:
-        st.write(i)
         pdf2.add_page()
         pdf2.image(i)
+    for i in lImage:
+        pdf3.add_page()
+        pdf3.image(i)
         
     st.download_button("Download Image screenshot PDF",
                        data=pdf2.output(dest='S'),
