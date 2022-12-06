@@ -137,7 +137,7 @@ if upload_file is not None:
     st.write(df)
     st.header('STEP 3. Check the Scameter')
     
-if st.button('Check Scameter'):
+st.button('Check Scameter'):
     pdf = FPDF() #create an A-4 size pdf document
     vImage = []
     st.write(scameterCheck(df))
@@ -146,16 +146,16 @@ if st.button('Check Scameter'):
     st.dataframe(df)
     #Download button for the output csv
     st.download_button("Download CSV",
-                      df.to_csv(index=False),
-                      mime='text/csv')
+                        df.to_csv(index=False),
+                        mime='text/csv')
     #Download button for the screenshot for audit purpose
     pdf2 = FPDF()
     for i in vImage:
         pdf2.add_page()
         pdf2.image(i)
-    st.download_button("Download Image screenshot PDF",
-                       data=pdf2.output(dest='S'),
-                       file_name="audittrail.pdf",
-                       mime='application/octet-stream')       
+        st.download_button("Download Image screenshot PDF",
+                           data=pdf2.output(dest='S'),
+                           file_name="audittrail.pdf",
+                           mime='application/octet-stream')       
 else:
     st.write('Yet run the searching script')        
