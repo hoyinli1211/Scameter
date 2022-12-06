@@ -54,6 +54,7 @@ def scameterCheck(frame):
         driver.implicitly_wait(0.5)
         
         for i in range(frame.count()[0]):
+            JobID = date.today().strftime("%Y%m%d") + str(i).zfill(3)
             value = frame['Value'].iloc[i]
             #Open the link
             driver.get(link)
@@ -81,6 +82,7 @@ def scameterCheck(frame):
             
             frame['Result'].iloc[i] = Result
             frame['RiskRating'].iloc[i] = RiskRating
+            frame['JobID'].iloc[i] = JobID
     else: print("input not dataframe")
 
 
