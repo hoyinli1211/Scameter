@@ -92,10 +92,10 @@ def scameterCheck(frame):
         
         #Zip all iamges to a folder
         with zipfile.ZipFile('AuditLog.zip', 'w') as img_zip:
-        for image_url in vImage:
-            img_name = os.path.basename(image_url)
-            img_data = requests.get(image_url).content
-            img_zip.writestr(img_name, img_data)
+            for image_url in vImage:
+                img_name = os.path.basename(image_url)
+                img_data = requests.get(image_url).content
+                img_zip.writestr(img_name, img_data)
         
     else: print("input not dataframe")
 
