@@ -58,7 +58,6 @@ def scameterCheck(frame):
         driver.implicitly_wait(0.5)
         
         frame['JobID'] = ""
-        vImage = []
         
         for i in range(frame.count()[0]):
             JobID = date.today().strftime("%Y%m%d") + str(i+1).zfill(3)
@@ -140,6 +139,7 @@ if upload_file is not None:
     
 if st.button('Check Scameter'):
     pdf = FPDF() #create an A-4 size pdf document
+    vImage = []
     st.write(scameterCheck(df))
     st.header('Return result')
     #Display and setup the return result dataframe
