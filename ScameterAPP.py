@@ -24,7 +24,7 @@ import math
 import requests
 import numpy as np
 import re
-
+from PIL import Image
 
 #required function
 def scameterCheck(frame):
