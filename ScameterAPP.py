@@ -153,9 +153,10 @@ if st.button('Check Scameter'):
         st.write(i)
         pdf2.add_page()
         pdf2.image(i)
-        st.download_button("Download Image screenshot PDF",
-                           data=pdf2.output(dest='S'),
-                           file_name="audittrail.pdf",
-                           mime='application/octet-stream')       
+        
+    st.download_button("Download Image screenshot PDF",
+                       data=pdf2.output(dest='S'),
+                       file_name="audittrail.pdf",
+                       mime='application/octet-stream')       
 else:
     st.write('Yet run the searching script')        
