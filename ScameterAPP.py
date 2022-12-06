@@ -98,8 +98,7 @@ def scameterCheck(frame):
         
         for image_url in vImage:
             pdf.add_page()
-            pdf.image(image_url, 0,0,200,250)
-        pdf.output("AuditLog.pdf","F") 
+            pdf.image(image_url, 0,0,200,250) 
                    
     else: print("input not dataframe")
 
@@ -149,7 +148,7 @@ if st.button('Check Scameter'):
                       mime='text/csv')
     #Download button for the screenshot for audit purpose
     st.download_button("Download Image screenshot PDF",
-                       data=pdf,
+                       data=pdf.output(dest='S'),
                        file_name="audittrail.pdf",
                        mime='application/octet-stream')       
 else:
