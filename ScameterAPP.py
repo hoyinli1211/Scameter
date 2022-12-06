@@ -28,6 +28,7 @@ from PIL import Image
 import glob
 import cv2
 import zipfile
+import fpdf import FPDF
 
 #required function
 def scameterCheck(frame):
@@ -93,11 +94,13 @@ def scameterCheck(frame):
             frame['RiskRating'].iloc[i] = RiskRating
             frame['JobID'].iloc[i] = JobID
         
-        #Zip all iamges to a folder
-        with zipfile.ZipFile('AuditLog.zip', 'w') as img_zip:
-            for image_url in vImage:
-                image_url.save("output.pdf", "PDF", resolution=100.0, save_all=True, append_images=image_url[1:])
-                
+        #Save all images to a pdf file
+        pdf = FPDF('P','mm','A4') #create an A-4 size pdf document
+        for image_url in vImage:
+            pdf.add_page()
+            pdf.image(image_url, 0,0,200,250)
+        pdf.output("AuditLog.pdf","F) 
+                   
     else: print("input not dataframe")
 
 
