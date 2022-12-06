@@ -84,7 +84,7 @@ def scameterCheck(frame):
             vImage.append(JobID + ".png")
             st.image(image)
             pdf.add_page()
-            pdf.image(str(JobID + ".png"), 60,120,w=120) 
+            pdf.image(JobID + ".png", 60,120,w=120) 
             
             #Result = driver.find_element_by_xpath('/html/body/form/section/div[2]/div[1]/div[2]/h1').text
             #risk = driver.find_element_by_xpath('/html/body/form/section/div[2]/div[1]/div[1]/img').get_attribute("src").rsplit('/', 1)[-1]
@@ -149,8 +149,12 @@ if st.button('Check Scameter'):
                       df.to_csv(index=False),
                       mime='text/csv')
     #Download button for the screenshot for audit purpose
+    pdf2 = FPDF()
+    for i in vImage:
+        pdf2.add_page()
+        pdf2.image(i)
     st.download_button("Download Image screenshot PDF",
-                       data=pdf.output(dest='S'),
+                       data=pdf2.output(dest='S'),
                        file_name="audittrail.pdf",
                        mime='application/octet-stream')       
 else:
