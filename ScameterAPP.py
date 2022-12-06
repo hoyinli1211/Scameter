@@ -150,6 +150,7 @@ if st.button('Check Scameter'):
     #Download button for the screenshot for audit purpose
     pdf2 = FPDF()
     for i in vImage:
+        st.write(i)
         pdf2.add_page()
         pdf2.image(i)
         st.download_button("Download Image screenshot PDF",
