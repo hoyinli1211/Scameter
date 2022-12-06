@@ -73,9 +73,9 @@ def scameterCheck(frame):
             image = Image.open("image.png")
             st.image(image)
             
-            #Result = driver.find_element_by_xpath('/html/body/form/section/div[2]/div[1]/div[2]/h1').text
+            Result = driver.find_element_by_xpath('/html/body/form/section/div[2]/div[1]/div[2]/h1').text
             #risk = driver.find_element_by_xpath('/html/body/form/section/div[2]/div[1]/div[1]/img').get_attribute("src").rsplit('/', 1)[-1]
-            Result = driver.find_element(By.XPATH, '/html/body/form/section/div[2]/div[1]/div[2]/h1').get_attribute("h1")
+            #Result = driver.find_element(By.XPATH, '/html/body/form/section/div[2]/div[1]/div[2]/h1').get_attribute("h1")
             risk = driver.find_element(By.XPATH, '/html/body/form/section/div[2]/div[1]/div[1]/img').get_attribute("src").rsplit('/', 1)[-1]
             RiskRating = re.sub("_en.webp", "", risk)
             
