@@ -19,7 +19,7 @@ from selenium.webdriver.common.action_chains import ActionChains
 from bs4 import BeautifulSoup
 import time
 import pandas as pd
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, date
 import math
 import requests
 import numpy as np
