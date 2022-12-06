@@ -74,7 +74,7 @@ def scameterCheck(frame):
             driver.find_element(By.XPATH, '//*[@id="post-3646"]/div/div/section[2]/div/div/div/div/div/form/div/div/div[1]/div[2]/div[2]').click()
             time.sleep(5)
             
-            driver.set_window_size(1920, 1400)
+            driver.set_window_size(1920, 1300)
             driver.get_screenshot_as_file(JobID + ".png")
             image = Image.open(JobID + ".png")
             vImage = vImage.append(JobID + ".png")
