@@ -103,7 +103,6 @@ def scameterCheck(frame):
                    
     else: print("input not dataframe")
 
-
 # Add a title and intro text
 st.title('Bulk checking on Scameter')
 st.text('This script is for educational purpose.')
@@ -137,7 +136,7 @@ if upload_file is not None:
     st.write(df)
     st.header('STEP 3. Check the Scameter')
     
-st.button('Check Scameter')
+if st.button('Check Scameter'):
     pdf = FPDF() #create an A-4 size pdf document
     vImage = []
     st.write(scameterCheck(df))
