@@ -77,7 +77,7 @@ def scameterCheck(frame):
             
             driver.set_window_size(1920, 1300)
             driver.get_screenshot_as_file(JobID + ".png")
-            image = Image.open(glob(JobID + ".png"))
+            image = Image.open(glob.glob(JobID + ".png"))
             vImage = vImage.append(image)
             st.image(image)
             
