@@ -92,7 +92,7 @@ st.text('For details of the tool, please visit https://cyberdefender.hk/en-us/')
 
 #Creating a File Uploader within Streamlit
 st.header('STEP 1. Import the data with Column Value')
-upload_file = st.file_uploader('Upload a file containing checklist data in xlsx/csv format')
+upload_file = st.file_uploader('Upload a file containing checklist data in xlsx/csv format. Template file available below.')
 
 temp_file = 'template.xlsx'
 df_temp = pd.read_excel(temp_file)
