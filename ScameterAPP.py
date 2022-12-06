@@ -155,10 +155,10 @@ if st.button('Check Scameter'):
     for i in vImage:
         pdf2.add_page()
         pdf2.set_font("Arial", size=12)
-        pdf2.text(50,50,txt=str(i))
+        pdf2.text(50,50,txt=i)
         pdf2.image(i)
     for i in lImage:
-        st.image(i)
+        pdf3.image(i)
     
     st.download_button("Download Image screenshot PDF",
                        data=pdf2.output(dest='S'),
