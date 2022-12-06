@@ -80,7 +80,7 @@ def scameterCheck(frame):
             driver.get_screenshot_as_file(JobID + ".png")
             image = Image.open(JobID + ".png")
             image.save(JobID + ".png")
-            vImage = vImage.append(str(JobID + ".png"))
+            vImage.append(str(JobID + ".png"))
             st.write(vImage)
             st.image(image)
             
