@@ -84,7 +84,7 @@ def scameterCheck(frame):
             vImage.append(JobID + ".png")
             st.image(image)
             pdf.add_page()
-            pdf.image(JobID + ".png") 
+            pdf.image(str(JobID + ".png"), 60,120,w=120) 
             
             #Result = driver.find_element_by_xpath('/html/body/form/section/div[2]/div[1]/div[2]/h1').text
             #risk = driver.find_element_by_xpath('/html/body/form/section/div[2]/div[1]/div[1]/img').get_attribute("src").rsplit('/', 1)[-1]
