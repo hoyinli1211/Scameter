@@ -154,11 +154,11 @@ if st.button('Check Scameter'):
     pdf3 = FPDF()
     for i in vImage:
         pdf2.add_page()
+        pdf2.text(txt: i)
         pdf2.image(i)
     for i in lImage:
-        pdf3.add_page()
-        pdf3.image(i.convert('RGB'))
-        
+        st.image(i)
+    
     st.download_button("Download Image screenshot PDF",
                        data=pdf2.output(dest='S'),
                        file_name="audittrail.pdf",
