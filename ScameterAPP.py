@@ -28,7 +28,7 @@ from PIL import Image
 import glob
 import cv2
 import zipfile
-import fpdf import FPDF
+from fpdf import FPDF
 
 #required function
 def scameterCheck(frame):
