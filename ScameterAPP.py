@@ -148,9 +148,9 @@ if st.button('Check Scameter'):
                       df.to_csv(index=False),
                       mime='text/csv')
     #Download button for the screenshot for audit purpose
-    st.download_button(label = "Download Image screenshot PDF",
-                      data=pdf,
-                      file_name="audittrail.pdf",
-                      mime='application/octet-stream')       
+    st.download_button("Download Image screenshot PDF",
+                       data=pdf,
+                       file_name="audittrail.pdf",
+                       mime='application/octet-stream')       
 else:
     st.write('Yet run the searching script')        
