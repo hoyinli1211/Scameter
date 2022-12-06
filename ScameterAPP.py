@@ -53,8 +53,11 @@ def scameterCheck(frame):
         #driver = webdriver.Chrome(ChromeDriverManager().install(), options=options)
         driver.implicitly_wait(0.5)
         
+        frame['JobID'] = ""
+        
         for i in range(frame.count()[0]):
             JobID = date.today().strftime("%Y%m%d") + str(i).zfill(3)
+            st.write(JobID)
             value = frame['Value'].iloc[i]
             #Open the link
             driver.get(link)
