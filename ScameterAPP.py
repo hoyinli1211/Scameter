@@ -25,6 +25,7 @@ import requests
 import numpy as np
 import re
 from PIL import Image
+import glob
 import zipfile
 
 #required function
@@ -76,8 +77,8 @@ def scameterCheck(frame):
             
             driver.set_window_size(1920, 1300)
             driver.get_screenshot_as_file(JobID + ".png")
-            image = Image.open(JobID + ".png")
-            vImage = vImage.append(JobID + ".png")
+            image = Image.open(glob(JobID + ".png"))
+            vImage = vImage.append(image)
             st.image(image)
             
             #Result = driver.find_element_by_xpath('/html/body/form/section/div[2]/div[1]/div[2]/h1').text
