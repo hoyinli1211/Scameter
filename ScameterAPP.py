@@ -94,7 +94,7 @@ st.text('For details of the tool, please visit https://cyberdefender.hk/en-us/')
 st.header('STEP 1. Import the data with Column Value')
 upload_file = st.file_uploader('Upload a file containing checklist data in xlsx/csv format')
 
-temp_file = r"https://github.com/hoyinli1211/Scameter/blob/main/template.xlsx"
+temp_file = 'template.xlsx'
 df_temp = pd.read_excel(temp_file)
 st.download_button("Download template file",
                       df.to_csv(index=False),
