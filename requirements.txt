@@ -7,4 +7,3 @@ webdriver_manager
 openpyxl
 option
 Image
-OpenCV
