@@ -99,7 +99,7 @@ def scameterCheck(frame):
         for image_url in vImage:
             pdf.add_page()
             pdf.image(image_url, 0,0,200,250)
-        pdf.output("AuditLog.pdf","F) 
+        pdf.output("AuditLog.pdf","F") 
                    
     else: print("input not dataframe")
 
