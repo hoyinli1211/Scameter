@@ -154,7 +154,7 @@ if st.button('Check Scameter'):
     pdf3 = FPDF()
     for i in vImage:
         pdf2.add_page()
-        pdf2.text(i)
+        pdf2.text(50,50,txt=str(i))
         pdf2.image(i)
     for i in lImage:
         st.image(i)
