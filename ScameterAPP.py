@@ -97,7 +97,7 @@ upload_file = st.file_uploader('Upload a file containing checklist data in xlsx/
 temp_file = 'template.xlsx'
 df_temp = pd.read_excel(temp_file)
 st.download_button("Download template file",
-                      df.to_csv(index=False),
+                      df_temp.to_csv(index=False),
                       mime='text/csv')
 
 if upload_file is not None:
