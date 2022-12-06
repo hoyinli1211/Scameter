@@ -148,8 +148,8 @@ if st.button('Check Scameter'):
                       mime='text/csv')
     #Download button for the screenshot for audit purpose
     st.download_button(label = "Download Image screenshot PDF",
-                      data=pdf,
-                       file_name="audittrail.pdf",
+                      data=pdf.output("AuditLog.pdf","F"),
+                      file_name="audittrail.pdf",
                       mime='application/octet-stream')       
 else:
     st.write('Yet run the searching script')        
