@@ -25,6 +25,7 @@ import requests
 import numpy as np
 import re
 from PIL import Image
+import zipfile
 
 #required function
 def scameterCheck(frame):
@@ -54,9 +55,10 @@ def scameterCheck(frame):
         driver.implicitly_wait(0.5)
         
         frame['JobID'] = ""
+        vImage = []
         
         for i in range(frame.count()[0]):
-            JobID = date.today().strftime("%Y%m%d") + str(i).zfill(3)
+            JobID = date.today().strftime("%Y%m%d") + str(i+1).zfill(3)
             st.write(JobID)
             value = frame['Value'].iloc[i]
             #Open the link
@@ -75,6 +77,7 @@ def scameterCheck(frame):
             driver.set_window_size(1920, 1400)
             driver.get_screenshot_as_file(JobID + ".png")
             image = Image.open(JobID + ".png")
+            vImage = vImage.append(image)
             st.image(image)
             
             #Result = driver.find_element_by_xpath('/html/body/form/section/div[2]/div[1]/div[2]/h1').text
@@ -86,6 +89,14 @@ def scameterCheck(frame):
             frame['Result'].iloc[i] = Result
             frame['RiskRating'].iloc[i] = RiskRating
             frame['JobID'].iloc[i] = JobID
+        
+        #Zip all iamges to a folder
+        with zipfile.ZipFile('AuditLog.zip', 'w') as img_zip:
+        for image_url in vImage:
+            img_name = os.path.basename(image_url)
+            img_data = requests.get(image_url).content
+            img_zip.writestr(img_name, img_data)
+        
     else: print("input not dataframe")
 
 
