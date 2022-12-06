@@ -68,7 +68,7 @@ def scameterCheck(frame):
             driver.find_element(By.XPATH, '//*[@id="post-3646"]/div/div/section[2]/div/div/div/div/div/form/div/div/div[1]/div[2]/div[2]').click()
             time.sleep(5)
             
-            driver.save_screenshot(i + "_" + value + ".png")
+            driver.get_screenshot_as_file(i + "_" + value + ".png")
             image = Image.open(i + "_" + value + ".png")
             st.image(image)
             
