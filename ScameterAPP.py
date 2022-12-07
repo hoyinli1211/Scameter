@@ -3,7 +3,6 @@
 
 #import required library
 import streamlit as st
-from streamlit import caching
 import os, sys
 
 from selenium import webdriver
@@ -170,7 +169,8 @@ else:
     st.write("Result already executed. Please click 'Clear All' button for checking next batch")
 
 if st.button('Clear All'):
-    caching.clear__cache()  
+    st.session_state['ind1'] = False
+    st.session_state['ind2'] = False
 else:
     ''
     
