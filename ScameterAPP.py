@@ -155,6 +155,7 @@ if st.button('Check Scameter') and ind2==False:
     vImage = vImage
     ind2=True  
 else:
+    abc=''
     
 st.header('STEP 4. Export return result and audit log on screenshot after review')
 if ind1==True and ind2==True:
