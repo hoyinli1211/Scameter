@@ -152,6 +152,7 @@ if st.button('Check Scameter'):
     st.download_button("Download CSV",
                         df.to_csv(index=False),
                         mime='text/csv')
+    df.to_csv(index=False)
     #Download button for the screenshot for audit purpose
     pdf2 = FPDF('L', 'mm', 'A4')
     for i in vImage:
@@ -171,6 +172,7 @@ if st.button('Check Scameter'):
     st.download_button("Download Image screenshot PDF",
                        data=PDFbyte,
                        file_name="audittrail.pdf",
-                       mime='application/octet-stream')       
+                       mime='application/octet-stream')  
+    pdf2.output('output.pdf','S')
 else:
     st.write('Yet run the searching script')        
