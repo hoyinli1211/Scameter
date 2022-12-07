@@ -171,6 +171,7 @@ else:
 if st.button('Clear All'):
     st.session_state['ind1'] = False
     st.session_state['ind2'] = False
+    st.session_state['df'] = []
 else:
     ''
     
