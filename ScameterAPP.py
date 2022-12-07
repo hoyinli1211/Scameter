@@ -179,8 +179,10 @@ else:
 
 st.download_button("Download CSV",
                         df.to_csv(index=False),
-                        mime='text/csv')    
+                        mime='text/csv') 
 
+with open("output1.pdf", "rb") as pdf_file:
+    PDFbyte = pdf_file.read()
 st.download_button("Download Image screenshot PDF",
                    data=PDFbyte,
                    file_name="audittrail.pdf",
