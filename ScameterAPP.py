@@ -167,10 +167,7 @@ else:
         st.session_state['ind1'] = True
         st.write(st.session_state) 
     else:
-        st.header('STEP 2. Review the imported dataframe')
-        st.write(df)
-        st.header('STEP 3. Check the Scameter')
-        st.write(st.session_state) 
+        pass
     
 
 if st.session_state['ind0']==False and st.session_state['ind1']==False and st.session_state['ind2']==False:
