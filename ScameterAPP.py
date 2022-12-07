@@ -169,7 +169,7 @@ if st.button('Check Scameter') and st.session_state['ind2']==False:
     ind2=True
     st.session_state['ind2'] = True
 else:
-    st.write("Result already executed. Please click 'Clear All' button for checking next batch")
+    st.write("Result already executed. Please refresh the page for checking next batch")
    
 st.header('STEP 4. Export return result and audit log on screenshot after review')
 if st.session_state['ind1']==True and st.session_state['ind2']==True:
