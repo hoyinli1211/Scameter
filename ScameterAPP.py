@@ -81,10 +81,17 @@ def scameterCheck(frame):
             image = Image.open(JobID + ".png")
             image.save(JobID + ".png")
             vImage.append(JobID + ".png")
-            lImage.append(image)
             st.image(image)
+            
+            #pdf
             pdf.add_page()
-            pdf.image(JobID + ".png", 60,120,w=120) 
+            pdf.set_margins(0,0,0)
+            pdf.set_font("Arial", size=12)
+            pdf.cell(10,10,i, 0,0,'C')
+            width, height = Image.open(JobID + ".png").size
+            width, height = float(width * 0.1), float(height * 0.1)
+            pdf.image(i, 20 , 20, width, height)
+            pdf.line(x1=85, y1=27.5, x2=125, y2=27.5)
             
             #Result = driver.find_element_by_xpath('/html/body/form/section/div[2]/div[1]/div[2]/h1').text
             #risk = driver.find_element_by_xpath('/html/body/form/section/div[2]/div[1]/div[1]/img').get_attribute("src").rsplit('/', 1)[-1]
@@ -96,12 +103,8 @@ def scameterCheck(frame):
             frame['RiskRating'].iloc[i] = RiskRating
             frame['JobID'].iloc[i] = JobID
         
-        #Save all images to a pdf file
+        df.output('output1.pdf','F')
         
-        #for image_url in vImage:
-        #    pdf.add_page()
-        #    pdf.image(image_url, 0,0,200,250) 
-                   
     else: print("input not dataframe")
 
 # Add a title and intro text
@@ -138,9 +141,9 @@ if upload_file is not None:
     st.header('STEP 3. Check the Scameter')
   
 if st.button('Check Scameter'):
-    pdf = FPDF() #create an A-4 size pdf document
+    pdf = FPDF('L', 'mm', 'A4') #create an A-4 size pdf document
     vImage = []
-    lImage = []
+
     st.write(scameterCheck(df))
     st.header('Return result')
     #Display and setup the return result dataframe
@@ -151,7 +154,6 @@ if st.button('Check Scameter'):
                         mime='text/csv')
     #Download button for the screenshot for audit purpose
     pdf2 = FPDF('L', 'mm', 'A4')
-    pdf3 = FPDF()
     for i in vImage:
         pdf2.add_page()
         pdf2.set_margins(0,0,0)
@@ -163,7 +165,7 @@ if st.button('Check Scameter'):
         pdf2.line(x1=85, y1=27.5, x2=125, y2=27.5)
     pdf2.output('output.pdf','F')
     
-    with open("output.pdf", "rb") as pdf_file:
+    with open("output1.pdf", "rb") as pdf_file:
         PDFbyte = pdf_file.read()
         
     st.download_button("Download Image screenshot PDF",
