@@ -142,11 +142,11 @@ st.download_button("Download template file",
 ind1=False
 ind2=False
 
-if upload_file is None and st.session_state['ind1']==False:
+if st.session_state['ind0']==False:
     st.header('STEP 2. Review the imported dataframe')
     st.header('STEP 3. Check the Scameter')  
     st.write(st.session_state) 
-elif upload_file is not None and st.session_state['ind1']==False:
+elif st.session_state['ind0']==True and st.session_state['ind1']==False:
     #extension of file
     ext = os.path.splitext(upload_file.name)[1].lower()
     #Check the upload file extension and read the file to a dataframe using pandas
