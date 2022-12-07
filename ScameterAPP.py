@@ -186,4 +186,6 @@ if st.session_state['ind1']==True and st.session_state['ind2']==True:
                        data=PDFbyte,
                        file_name="audittrail.pdf",
                        mime='application/octet-stream') 
+ else:
+    ''
 #End of Script
