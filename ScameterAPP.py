@@ -160,6 +160,7 @@ if st.button('Check Scameter'):
         pdf2.cell(50,50,i, 0,0,'C')
         pdf2.image(i)
         pdf2.line(x1=85, y1=27.5, x2=125, y2=27.5)
+        pdf2.output('output.pdf','F')
     
     st.download_button("Download Image screenshot PDF",
                        data=pdf2.output(dest='S'),
