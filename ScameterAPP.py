@@ -139,7 +139,7 @@ if upload_file is None and st.session_state['ind1']==False:
     st.header('STEP 2. Review the imported dataframe')
     st.header('STEP 3. Check the Scameter')  
     st.write(st.session_state) 
-elif upload_file is not None and st.session_state['ind2']==False:
+elif upload_file is not None and st.session_state['ind1']==False:
     #extension of file
     ext = os.path.splitext(upload_file.name)[1].lower()
     #Check the upload file extension and read the file to a dataframe using pandas
