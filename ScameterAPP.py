@@ -85,13 +85,13 @@ def scameterCheck(frame):
             
             #pdf
             pdf.add_page()
-            pdf.set_margins(0,0,0)
+            pdf.set_margins(5,5,5)
             pdf.set_font("Arial", size=12)
             pdf.cell(10,10,JobID, 0,0,'C')
             width, height = Image.open(JobID + ".png").size
-            width, height = float(width * 0.1), float(height * 0.1)
+            width, height = float(width * 0.15), float(height * 0.15)
             pdf.image(JobID + ".png", 20 , 20, width, height)
-            pdf.line(x1=85, y1=27.5, x2=125, y2=27.5)
+            #pdf.line(x1=85, y1=27.5, x2=125, y2=27.5)
             
             #Result = driver.find_element_by_xpath('/html/body/form/section/div[2]/div[1]/div[2]/h1').text
             #risk = driver.find_element_by_xpath('/html/body/form/section/div[2]/div[1]/div[1]/img').get_attribute("src").rsplit('/', 1)[-1]
