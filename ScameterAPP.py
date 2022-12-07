@@ -177,6 +177,7 @@ if st.button('Check Scameter'):
 else:
     st.write('Yet run the searching script')        
 
+st.header('STEP 4. Export return result and audit log on screenshot after review')
 st.download_button("Download CSV",
                         df.to_csv(index=False),
                         mime='text/csv') 
