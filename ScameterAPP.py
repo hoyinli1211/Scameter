@@ -143,7 +143,7 @@ if upload_file is not None:
     st.header('STEP 3. Check the Scameter')
     ind1=True
 
-if st.button('Check Scameter'):
+with st.form('Check Scameter'):
     pdf = FPDF('L', 'mm', 'A4') #create an A-4 size pdf document
     vImage = []
         
@@ -153,8 +153,7 @@ if st.button('Check Scameter'):
     st.dataframe(df)
     df=df
     vImage = vImage
-    ind2=True
-    
+    ind2=True  
 else:
     st.write('Yet run the searching script')        
     
