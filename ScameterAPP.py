@@ -186,9 +186,4 @@ if st.session_state['ind1']==True and st.session_state['ind2']==True:
 else:
     pass
 
-if st.button("Re-run"):
-    st.legacy_caching.clear_cache()
-else:
-    pass
-
 #End of Script
