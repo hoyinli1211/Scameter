@@ -154,35 +154,9 @@ if st.button('Check Scameter'):
     df=df
     vImage = vImage
     ind2=True
-    #Download button for the output csv
-    #st.download_button("Download CSV",
-    #                    df.to_csv(index=False),
-    #                    mime='text/csv')
-    #open("export.csv", 'w').write(df.to_csv(index=False))
-    ##Download button for the screenshot for audit purpose
-    #pdf2 = FPDF('L', 'mm', 'A4')
-    #for i in vImage:
-    #    pdf2.add_page()
-    #    pdf2.set_margins(0,0,0)
-    #    pdf2.set_font("Arial", size=12)
-    #    pdf2.cell(10,10,i, 0,0,'C')
-    #    width, height = Image.open(i).size
-    #    width, height = float(width * 0.1), float(height * 0.1)
-    #    pdf2.image(i, 20 , 20, width, height)
-    #    pdf2.line(x1=85, y1=27.5, x2=125, y2=27.5)
-    #pdf2.output('output.pdf','F')
     
-    #with open("output1.pdf", "rb") as pdf_file:
-    #    PDFbyte = pdf_file.read()
-        
-    #st.download_button("Download Image screenshot PDF",
-    #                   data=PDFbyte,
-    #                   file_name="audittrail.pdf",
-    #                   mime='application/octet-stream')  
-      
 else:
     st.write('Yet run the searching script')        
-ind2=True
     
 st.header('STEP 4. Export return result and audit log on screenshot after review')
 if ind1==True and ind2==True:
@@ -196,3 +170,4 @@ if ind1==True and ind2==True:
                        data=PDFbyte,
                        file_name="audittrail.pdf",
                        mime='application/octet-stream') 
+#End of Script
