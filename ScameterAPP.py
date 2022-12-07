@@ -133,7 +133,7 @@ st.download_button("Download template file",
 ind1=False
 ind2=False
 
-if upload_file is not None and st.session_state['ind2'] == False:
+if upload_file is not None and st.session_state['ind2']==False:
     #extension of file
     ext = os.path.splitext(upload_file.name)[1].lower()
     #Check the upload file extension and read the file to a dataframe using pandas
@@ -153,7 +153,7 @@ if upload_file is not None and st.session_state['ind2'] == False:
     ind1=True
     st.session_state['ind1'] = True
   
-if st.button('Check Scameter') and st.session_state['ind2']==False:
+if st.button('Check Scameter').on_click() and st.session_state['ind2']==False:
     pdf = FPDF('L', 'mm', 'A4') #create an A-4 size pdf document
     vImage = []
         
@@ -169,7 +169,7 @@ if st.button('Check Scameter') and st.session_state['ind2']==False:
 else:
     st.write("Result already executed. Please click 'Clear All' button for checking next batch")
 
-if st.button('Clear All'):
+if st.button('Clear All').on_click():
     st.session_state['ind1'] = False
     st.session_state['ind2'] = False
     st.session_state['df'] = []
