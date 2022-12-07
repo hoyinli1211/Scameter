@@ -166,7 +166,24 @@ if st.button('Check Scameter') and st.session_state['ind2']==False:
     ind2=True
     st.session_state['ind2'] = True
 else:
-    abc=''
+    st.write("You run the Check Scameter button already. Please click re-run button instead")
+
+if st.button('Re-run'):
+    st.session_state['ind2']==False
+    st.session_state['df']==[]
+    pdf = FPDF('L', 'mm', 'A4') #create an A-4 size pdf document
+    vImage = []    
+    st.write(scameterCheck(df))
+    st.header('Return result')
+    #Display and setup the return result dataframe
+    st.dataframe(df)
+    df=df
+    st.session_state['df'] = df
+    vImage = vImage
+    ind2=True
+    st.session_state['ind2'] = True    
+else:
+    ''
     
 st.header('STEP 4. Export return result and audit log on screenshot after review')
 if st.session_state['ind1']==True and st.session_state['ind2']==True:
