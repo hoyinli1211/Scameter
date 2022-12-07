@@ -184,7 +184,7 @@ else:
     st.write('Yet run the searching script')        
 
 st.header('STEP 4. Export return result and audit log on screenshot after review')
-if ind1=True and ind2=True:
+if ind1==True and ind2==True:
     st.write(df)
 st.download_button("Download CSV",
                         df.to_csv(index=False),
