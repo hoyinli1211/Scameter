@@ -179,7 +179,6 @@ if st.session_state['ind0']==True and st.session_state['ind1']==True and st.sess
         #Display and setup the return result dataframe
         st.dataframe(df)
         df=df
-        st.session_state['df'] = df
         vImage = vImage
         ind2=True
         st.session_state['ind2'] = True
