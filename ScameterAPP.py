@@ -152,16 +152,17 @@ else:
         if ext == '.xlsx':
             #xlsx
             df = pd.read_excel(upload_file, dtype=str)
-            st.session_state['df']=df
+            
         elif ext == '.csv':
             df = pd.read_csv(upload_file, dtype=str)
-            st.session_state['df']=df
+            
         else:
             err = "<font color='red'>error: the file not in xlsx/csv format</font>"
             st.markdown(f'<p style= "color:#ff0000;">error: the file not in xlsx/csv format</p>', unsafe_allow_html=True)
         #Create a section for the dataframe
         st.header('STEP 2. Review the imported dataframe')
         st.write(df)
+        df=df
         st.header('STEP 3. Check the Scameter')
         ind1=True
         st.session_state['ind1'] = True
