@@ -154,6 +154,7 @@ elif upload_file is not None and st.session_state['ind1']==False:
     #Create a section for the dataframe
     st.header('STEP 2. Review the imported dataframe')
     st.write(df)
+    st.session_state['df']==df
     st.header('STEP 3. Check the Scameter')
     ind1=True
     st.session_state['ind1'] = True
