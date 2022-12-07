@@ -176,3 +176,12 @@ if st.button('Check Scameter'):
       
 else:
     st.write('Yet run the searching script')        
+
+st.download_button("Download CSV",
+                        df.to_csv(index=False),
+                        mime='text/csv')    
+
+st.download_button("Download Image screenshot PDF",
+                   data=PDFbyte,
+                   file_name="audittrail.pdf",
+                   mime='application/octet-stream') 
