@@ -139,9 +139,9 @@ if upload_file is not None:
     #Check the upload file extension and read the file to a dataframe using pandas
     if ext == '.xlsx':
         #xlsx
-        df = pd.read_excel(upload_file)
+        df = pd.read_excel(upload_file, dtype=str)
     elif ext == '.csv':
-        df = pd.read_csv(upload_file)
+        df = pd.read_csv(upload_file, dtype=str)
     else:
         err = "<font color='red'>error: the file not in xlsx/csv format</font>"
         st.markdown(f'<p style= "color:#ff0000;">error: the file not in xlsx/csv format</p>', unsafe_allow_html=True)
