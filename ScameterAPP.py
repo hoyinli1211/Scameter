@@ -171,9 +171,7 @@ else:
         pass
     
 
-if st.session_state['ind0']==False and st.session_state['ind1']==False and st.session_state['ind2']==False:
-    pass
-elif st.session_state['ind0']==True and st.session_state['ind1']==True and st.session_state['ind2']==False:
+if st.session_state['ind0']==True and st.session_state['ind1']==True and st.session_state['ind2']==False:
     if st.button('Check Scameter') and st.session_state['ind2']==False:
         pdf = FPDF('L', 'mm', 'A4') #create an A-4 size pdf document
         vImage = []
