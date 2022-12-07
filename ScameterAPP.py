@@ -173,9 +173,9 @@ else:
    
 st.header('STEP 4. Export return result and audit log on screenshot after review')
 if st.session_state['ind1']==True and st.session_state['ind2']==True:
-    st.download_button("Download CSV",
-                        df.to_csv(index=False),
-                        mime='text/csv') 
+    st.download_button("Download Output",
+                        df.to_excel(index=False),
+                        mime='xlsx') 
     st.write(st.session_state['df'])
     with open("output1.pdf", "rb") as pdf_file:
         PDFbyte = pdf_file.read()
