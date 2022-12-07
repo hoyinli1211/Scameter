@@ -163,7 +163,7 @@ if st.button('Check Scameter'):
         pdf2.output('output.pdf','F')
     
     st.download_button("Download Image screenshot PDF",
-                       data=pdf2.output(dest='S'),
+                       data=pdf2,
                        file_name="audittrail.pdf",
                        mime='application/octet-stream')       
 else:
