@@ -122,6 +122,8 @@ df_temp = pd.read_excel(temp_file)
 st.download_button("Download template file",
                       df_temp.to_csv(index=False),
                       mime='text/csv')
+ind1=False
+ind2=False
 
 if upload_file is not None:
     #extension of file
@@ -139,6 +141,7 @@ if upload_file is not None:
     st.header('STEP 2. Review the imported dataframe')
     st.write(df)
     st.header('STEP 3. Check the Scameter')
+    ind1=True
 
 if st.button('Check Scameter'):
     pdf = FPDF('L', 'mm', 'A4') #create an A-4 size pdf document
@@ -150,6 +153,7 @@ if st.button('Check Scameter'):
     st.dataframe(df)
     df=df
     vImage = vImage
+    ind2=True
     #Download button for the output csv
     #st.download_button("Download CSV",
     #                    df.to_csv(index=False),
@@ -180,7 +184,8 @@ else:
     st.write('Yet run the searching script')        
 
 st.header('STEP 4. Export return result and audit log on screenshot after review')
-st.write(df)
+if ind1=True and ind2=True:
+    st.write(df)
 st.download_button("Download CSV",
                         df.to_csv(index=False),
                         mime='text/csv') 
