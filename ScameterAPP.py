@@ -152,7 +152,7 @@ if st.button('Check Scameter'):
     st.download_button("Download CSV",
                         df.to_csv(index=False),
                         mime='text/csv')
-    df.to_csv(index=False)
+    df.to_csv("export.csv", index=False)
     #Download button for the screenshot for audit purpose
     pdf2 = FPDF('L', 'mm', 'A4')
     for i in vImage:
