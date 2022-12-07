@@ -182,7 +182,8 @@ if st.button('Check Scameter'):
       
 else:
     st.write('Yet run the searching script')        
-
+ind2=True
+    
 st.header('STEP 4. Export return result and audit log on screenshot after review')
 if ind1==True and ind2==True:
     st.write(df)
