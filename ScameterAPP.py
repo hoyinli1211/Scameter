@@ -156,7 +156,7 @@ else:
     st.header('STEP 2. Review the imported dataframe')
     st.header('STEP 3. Check the Scameter')
     
-if st.button('Check Scameter'):
+if st.button('Check Scameter') and st.session_state['ind2']==False:
     pdf = FPDF('L', 'mm', 'A4') #create an A-4 size pdf document
     vImage = []
 
