@@ -154,8 +154,10 @@ else:
         if ext == '.xlsx':
             #xlsx
             df = pd.read_excel(upload_file, dtype=str)
+            st.session_state['df']=df
         elif ext == '.csv':
             df = pd.read_csv(upload_file, dtype=str)
+            st.session_state['df']=df
         else:
             err = "<font color='red'>error: the file not in xlsx/csv format</font>"
             st.markdown(f'<p style= "color:#ff0000;">error: the file not in xlsx/csv format</p>', unsafe_allow_html=True)
