@@ -31,6 +31,8 @@ import zipfile
 from fpdf import FPDF
 
 #initialization of session state
+if 'ind0' not in st.session_state:
+    st.session_state['ind0'] = False
 if 'ind1' not in st.session_state:
     st.session_state['ind1'] = False
 if 'ind2' not in st.session_state:
@@ -126,6 +128,11 @@ st.text('For details of the tool, please visit https://cyberdefender.hk/en-us/')
 #Creating a File Uploader within Streamlit
 st.header('STEP 1. Import the data with Column Value')
 upload_file = st.file_uploader('Upload a file containing checklist data in xlsx/csv format. Template file available below.')
+
+if upload_file is not none:
+    st.session_state['ind0'] = True
+else:
+    pass
 
 temp_file = 'template.xlsx'
 df_temp = pd.read_excel(temp_file)
