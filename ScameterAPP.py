@@ -142,8 +142,8 @@ if upload_file is not None:
     st.write(df)
     st.header('STEP 3. Check the Scameter')
     ind1=True
-
-with st.form('Check Scameter'):
+  
+if st.button('Check Scameter') and ind2==False:
     pdf = FPDF('L', 'mm', 'A4') #create an A-4 size pdf document
     vImage = []
         
@@ -154,6 +154,7 @@ with st.form('Check Scameter'):
     df=df
     vImage = vImage
     ind2=True  
+else:
     
 st.header('STEP 4. Export return result and audit log on screenshot after review')
 if ind1==True and ind2==True:
