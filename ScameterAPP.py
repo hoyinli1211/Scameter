@@ -141,7 +141,7 @@ if st.button('PDF'):
     #Download button for the screenshot for audit purpose
     pdf2 = FPDF('P', 'mm', 'A4')
     pdf3 = FPDF()
-    #for i in [1:5]:
+    for i in [1:5]:
         pdf2.add_page()
         pdf2.set_margins(0,0,0)
         pdf2.output('output.pdf','F')
