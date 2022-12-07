@@ -35,6 +35,8 @@ if 'ind1' not in st.session_state:
     st.session_state['ind1'] = False
 if 'ind2' not in st.session_state:
     st.session_state['ind2'] = False
+if 'df' not in st.session_state:
+    st.session_state['df'] = []
 
 #required function(s)
 def scameterCheck(frame):
@@ -159,6 +161,7 @@ if st.button('Check Scameter') and st.session_state['ind2']==False:
     #Display and setup the return result dataframe
     st.dataframe(df)
     df=df
+    st.session_state['df'] = df
     vImage = vImage
     ind2=True
     st.session_state['ind2'] = True
@@ -170,7 +173,7 @@ if st.session_state['ind1']==True and st.session_state['ind2']==True:
     st.download_button("Download CSV",
                         df.to_csv(index=False),
                         mime='text/csv') 
-
+    st.write(st.session_state['df'])
     with open("output1.pdf", "rb") as pdf_file:
         PDFbyte = pdf_file.read()
     st.download_button("Download Image screenshot PDF",
