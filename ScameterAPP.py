@@ -164,7 +164,7 @@ else:
     st.header('STEP 3. Check the Scameter')
     st.write(st.session_state) 
     
-if st.button('Check Scameter') and st.session_state['ind2']==False and upload_file is not None:
+if st.button('Check Scameter') and st.session_state['ind2']==False and upload_file is not None and st.session_state['df']!=[]:
     pdf = FPDF('L', 'mm', 'A4') #create an A-4 size pdf document
     vImage = []
 
