@@ -85,11 +85,11 @@ def scameterCheck(frame):
             
             #pdf
             pdf.add_page()
-            pdf.set_margins(5,5,5)
+            pdf.set_margins(0,0,0)
             pdf.set_font("Arial", size=12)
-            pdf.cell(10,10,JobID, 0,0,'C')
+            pdf.cell(20,10,JobID, 5,5,'C')
             width, height = Image.open(JobID + ".png").size
-            width, height = float(width * 0.15), float(height * 0.15)
+            width, height = float(width * 0.13), float(height * 0.13)
             pdf.image(JobID + ".png", 20 , 20, width, height)
             #pdf.line(x1=85, y1=27.5, x2=125, y2=27.5)
             
