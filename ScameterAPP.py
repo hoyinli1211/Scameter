@@ -169,7 +169,7 @@ if st.button('Check Scameter'):
 else:
     st.write("Result already executed. Please click 'Clear All' button for checking next batch")
 
-if st.button('Clear All').on_click():
+if st.button('Clear All'):
     st.session_state['ind1'] = False
     st.session_state['ind2'] = False
     st.session_state['df'] = []
