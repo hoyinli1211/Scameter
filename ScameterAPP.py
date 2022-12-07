@@ -76,7 +76,7 @@ def scameterCheck(frame):
             driver.find_element(By.XPATH, '//*[@id="post-3646"]/div/div/section[2]/div/div/div/div/div/form/div/div/div[1]/div[2]/div[2]').click()
             time.sleep(5)
             
-            driver.set_window_size(1920, 1200)
+            driver.set_window_size(1920, 1100)
             driver.get_screenshot_as_file(JobID + ".png")
             image = Image.open(JobID + ".png")
             image.save(JobID + ".png")
@@ -156,10 +156,10 @@ if st.button('Check Scameter'):
         pdf2.add_page()
         pdf2.set_margins(0,0,0)
         pdf2.set_font("Arial", size=12)
-        pdf2.cell(50,50,i, 0,0,'C')
+        pdf2.cell(0,0,i, 0,0,'C')
         width, height = Image.open(i).size
-        width, height = float(width * 0.264583), float(height * 0.264583)
-        pdf2.image(i, 0 , 0, width, height)
+        width, height = float(width * 0.05), float(height * 0.05)
+        pdf2.image(i, 10 , 10, width, height)
         pdf2.line(x1=85, y1=27.5, x2=125, y2=27.5)
     pdf2.output('output.pdf','F')
     
