@@ -159,7 +159,7 @@ else:
     st.write(df)
     st.header('STEP 3. Check the Scameter')
     
-if st.button('Check Scameter') and st.session_state['ind2']==False:
+if st.button('Check Scameter') and st.session_state['ind2']==False and upload_file is not None:
     pdf = FPDF('L', 'mm', 'A4') #create an A-4 size pdf document
     vImage = []
 
