@@ -176,14 +176,17 @@ if st.button('Check Scameter'):
     for i in vImage:
         pdf2.add_page()
         pdf2.set_margins(0,0,0)
-        pdf2.output('output.pdf','F')
         pdf2.set_font("Arial", size=12)
         pdf2.cell(50,50,i, 0,0,'C')
         pdf2.image(i)
         pdf2.line(x1=85, y1=27.5, x2=125, y2=27.5)
+    pdf2.output('output.pdf','F')
     
+    with open("output.pdf", "rb") as pdf_file:
+        PDFbyte = pdf_file.read()
+        
     st.download_button("Download Image screenshot PDF",
-                       data=pdf2,
+                       data=PDFbyte,
                        file_name="audittrail.pdf",
                        mime='application/octet-stream')       
 else:
