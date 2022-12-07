@@ -129,7 +129,7 @@ st.text('For details of the tool, please visit https://cyberdefender.hk/en-us/')
 st.header('STEP 1. Import the data with Column Value')
 upload_file = st.file_uploader('Upload a file containing checklist data in xlsx/csv format. Template file available below.')
 
-if upload_file is not none:
+if upload_file is not None:
     st.session_state['ind0'] = True
 else:
     pass
