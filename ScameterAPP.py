@@ -139,11 +139,17 @@ if upload_file is not None:
     st.header('STEP 2. Review the imported dataframe')
     st.write(df)
     st.header('STEP 3. Check the Scameter')
-  
+
+def show_pdf(file_path):
+    with open(file_path,"rb") as f:
+        base64_pdf = base64.b64encode(f.read()).decode('utf-8')
+        pdf_display = f'<iframe src="data:application/pdf;base64,{base64_pdf}" width="800" height="800" type="application/pdf"></iframe>'
+        st.markdown(pdf_display, unsafe_allow_html=True)    
+    
 if st.button('Check Scameter'):
     pdf = FPDF('L', 'mm', 'A4') #create an A-4 size pdf document
     vImage = []
-
+        
     st.write(scameterCheck(df))
     st.header('Return result')
     #Display and setup the return result dataframe
@@ -173,8 +179,6 @@ if st.button('Check Scameter'):
                        data=PDFbyte,
                        file_name="audittrail.pdf",
                        mime='application/octet-stream')  
-    with open("output1.pdf","wb") as pdf_file:
-        pdf_file.write() 
-        
+    show_pdf("output1.pdf")    
 else:
     st.write('Yet run the searching script')        
