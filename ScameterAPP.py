@@ -154,7 +154,8 @@ if upload_file is not None and st.session_state['ind2']==False:
 else:
     st.header('STEP 2. Review the imported dataframe')
     st.header('STEP 3. Check the Scameter')
-if st.button('Check Scameter'):
+    
+if st.button('Check Scameter') and st.session_state['ind2']==False:
     pdf = FPDF('L', 'mm', 'A4') #create an A-4 size pdf document
     vImage = []
         
@@ -169,13 +170,7 @@ if st.button('Check Scameter'):
     st.session_state['ind2'] = True
 else:
     st.write("Result already executed. Please click 'Clear All' button for checking next batch")
-
-if st.button('Clear All'):
-    st.session_state['ind1'] = False
-    st.session_state['ind2'] = False
-else:
-    ''
-    
+   
 st.header('STEP 4. Export return result and audit log on screenshot after review')
 if st.session_state['ind1']==True and st.session_state['ind2']==True:
     st.download_button("Download CSV",
