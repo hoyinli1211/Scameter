@@ -152,7 +152,9 @@ if upload_file is not None and st.session_state['ind2']==False:
     st.header('STEP 3. Check the Scameter')
     ind1=True
     st.session_state['ind1'] = True
-  
+else:
+    st.header('STEP 2. Review the imported dataframe')
+    st.header('STEP 3. Check the Scameter')
 if st.button('Check Scameter'):
     pdf = FPDF('L', 'mm', 'A4') #create an A-4 size pdf document
     vImage = []
