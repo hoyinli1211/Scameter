@@ -170,7 +170,6 @@ else:
 
 if st.button('Re-run'):
     st.session_state['ind2']==False
-    st.session_state['df']==[]
     pdf = FPDF('L', 'mm', 'A4') #create an A-4 size pdf document
     vImage = []    
     st.write(scameterCheck(df))
