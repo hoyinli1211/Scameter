@@ -38,6 +38,8 @@ if 'ind2' not in st.session_state:
 if 'df' not in st.session_state:
     st.session_state['df'] = []
 
+st.write(st.session_state) 
+    
 #required function(s)
 def scameterCheck(frame):
     if isinstance(frame, pd.DataFrame):
@@ -135,7 +137,8 @@ ind2=False
 
 if upload_file is None and st.session_state['ind1']==False:
     st.header('STEP 2. Review the imported dataframe')
-    st.header('STEP 3. Check the Scameter')    
+    st.header('STEP 3. Check the Scameter')  
+    st.write(st.session_state) 
 elif upload_file is not None and st.session_state['ind2']==False:
     #extension of file
     ext = os.path.splitext(upload_file.name)[1].lower()
@@ -154,10 +157,12 @@ elif upload_file is not None and st.session_state['ind2']==False:
     st.header('STEP 3. Check the Scameter')
     ind1=True
     st.session_state['ind1'] = True
+    st.write(st.session_state) 
 else:
     st.header('STEP 2. Review the imported dataframe')
     st.write(df)
     st.header('STEP 3. Check the Scameter')
+    st.write(st.session_state) 
     
 if st.button('Check Scameter') and st.session_state['ind2']==False and upload_file is not None:
     pdf = FPDF('L', 'mm', 'A4') #create an A-4 size pdf document
@@ -172,8 +177,10 @@ if st.button('Check Scameter') and st.session_state['ind2']==False and upload_fi
     vImage = vImage
     ind2=True
     st.session_state['ind2'] = True
+    st.write(st.session_state) 
 else:
     st.write("Result already executed. Please refresh the page for checking next batch")
+    st.write(st.session_state) 
 
 
 st.header('STEP 4. Export return result and audit log on screenshot after review')
@@ -188,7 +195,8 @@ if st.session_state['ind1']==True and st.session_state['ind2']==True:
                        data=PDFbyte,
                        file_name="audittrail.pdf",
                        mime='application/octet-stream') 
+    st.write(st.session_state) 
 else:
-    pass
+    st.write(st.session_state) 
 
 #End of Script
