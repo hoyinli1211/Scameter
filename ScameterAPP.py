@@ -150,8 +150,11 @@ if st.button('PDF'):
         #pdf2.image(i)
         pdf2.line(x1=85, y1=27.5, x2=125, y2=27.5)
     
+    with open("output.pdf", "rb") as pdf_file:
+        PDFbyte = pdf_file.read()
+
     st.download_button("Download Image screenshot PDF",
-                       data=pdf2.output(Dest='S'),
+                       data=PDFbyte,
                        file_name="audittrail.pdf",
                        mime='application/octet-stream')           
     
