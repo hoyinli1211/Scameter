@@ -156,10 +156,10 @@ if st.button('Check Scameter'):
         pdf2.add_page()
         pdf2.set_margins(0,0,0)
         pdf2.set_font("Arial", size=12)
-        pdf2.cell(0,0,i, 0,0,'C')
+        pdf2.cell(10,10,i, 0,0,'C')
         width, height = Image.open(i).size
-        width, height = float(width * 0.2), float(height * 0.2)
-        pdf2.image(i, 10 , 10, width, height)
+        width, height = float(width * 0.1), float(height * 0.1)
+        pdf2.image(i, 20 , 20, width, height)
         pdf2.line(x1=85, y1=27.5, x2=125, y2=27.5)
     pdf2.output('output.pdf','F')
     
