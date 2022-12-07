@@ -148,6 +148,8 @@ if st.button('Check Scameter'):
     st.header('Return result')
     #Display and setup the return result dataframe
     st.dataframe(df)
+    df=df
+    vImage = vImage
     #Download button for the output csv
     #st.download_button("Download CSV",
     #                    df.to_csv(index=False),
