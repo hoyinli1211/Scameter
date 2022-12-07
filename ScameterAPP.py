@@ -147,7 +147,8 @@ if upload_file is not None and st.session_state['ind2']==False:
         st.markdown(f'<p style= "color:#ff0000;">error: the file not in xlsx/csv format</p>', unsafe_allow_html=True)
     #Create a section for the dataframe
     st.header('STEP 2. Review the imported dataframe')
-    st.write(df)
+    st.session_state['df'] = df
+    st.write(st.session_state['df'])
     st.session_state['df']=df
     st.header('STEP 3. Check the Scameter')
     ind1=True
