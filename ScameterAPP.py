@@ -144,7 +144,7 @@ if st.session_state['ind0']==False:
     st.header('STEP 2. Review the imported dataframe')
     st.header('STEP 3. Check the Scameter')  
     st.write(st.session_state) 
-else: 
+elif st.session_state['ind0']==True:
     if st.session_state['ind1']==False:
         #extension of file
         ext = os.path.splitext(upload_file.name)[1].lower()
@@ -152,10 +152,8 @@ else:
         if ext == '.xlsx':
             #xlsx
             df = pd.read_excel(upload_file, dtype=str)
-            
         elif ext == '.csv':
             df = pd.read_csv(upload_file, dtype=str)
-            
         else:
             err = "<font color='red'>error: the file not in xlsx/csv format</font>"
             st.markdown(f'<p style= "color:#ff0000;">error: the file not in xlsx/csv format</p>', unsafe_allow_html=True)
@@ -168,7 +166,7 @@ else:
         st.session_state['ind1'] = True
         st.write(st.session_state) 
     else:
-        pass
+        df=df
     
 
 if st.session_state['ind0']==True and st.session_state['ind1']==True and st.session_state['ind2']==False:
