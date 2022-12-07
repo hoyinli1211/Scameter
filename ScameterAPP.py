@@ -153,7 +153,7 @@ if upload_file is not None and st.session_state['ind2']==False:
     ind1=True
     st.session_state['ind1'] = True
   
-if st.button('Check Scameter').on_click():
+if st.button('Check Scameter'):
     pdf = FPDF('L', 'mm', 'A4') #create an A-4 size pdf document
     vImage = []
         
