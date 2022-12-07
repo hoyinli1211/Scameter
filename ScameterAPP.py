@@ -130,7 +130,7 @@ upload_file = st.file_uploader('Upload a file containing checklist data in xlsx/
 if upload_file is not None:
     st.session_state['ind0'] = True
 else:
-    pass
+    st.session_state['ind0'] = False
 
 temp_file = 'template.xlsx'
 df_temp = pd.read_excel(temp_file)
