@@ -31,7 +31,6 @@ import zipfile
 from fpdf import FPDF
 
 #required function
-@st.cache
 def scameterCheck(frame):
     if isinstance(frame, pd.DataFrame):
         #Input the weblink
