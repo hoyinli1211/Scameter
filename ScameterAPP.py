@@ -150,13 +150,16 @@ if st.button('Check Scameter'):
                         df.to_csv(index=False),
                         mime='text/csv')
     #Download button for the screenshot for audit purpose
-    pdf2 = FPDF()
+    pdf2 = FPDF('P', 'mm', 'A4')
     pdf3 = FPDF()
     for i in vImage:
         pdf2.add_page()
+        pdf2.set_margins(0,0,0)
+        pdf2.output('output.pdf','F')
         pdf2.set_font("Arial", size=12)
-        pdf2.text(50,50,txt=i)
+        pdf2.cell(w=50,h=50,i, border=0, ln=1, align='', fill=FALSE, link='')
         pdf2.image(i)
+        pdf2.line(x1=85, y1=27.5, x2=125, y2=27.5)
     
     st.download_button("Download Image screenshot PDF",
                        data=pdf2.output(dest='S'),
