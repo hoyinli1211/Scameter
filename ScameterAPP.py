@@ -174,7 +174,7 @@ else:
 st.header('STEP 4. Export return result and audit log on screenshot after review')
 if st.session_state['ind1']==True and st.session_state['ind2']==True:
     st.download_button("Download Output",
-                        data=df,
+                        data=df.to_excel(),
                         file_name=date.today().strftime("%Y%m%d")+".xlsx",
                         mime='application/vnd.ms-excel') 
     st.write(st.session_state['df'])
