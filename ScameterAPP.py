@@ -3,6 +3,7 @@
 
 #import required library
 import streamlit as st
+from streamlit import caching
 import os, sys
 
 from selenium import webdriver
@@ -166,21 +167,10 @@ if st.button('Check Scameter') and st.session_state['ind2']==False:
     ind2=True
     st.session_state['ind2'] = True
 else:
-    st.write("You run the Check Scameter button already. Please click re-run button instead")
+    st.write("Result already executed. Please click 'Clear All' button for checking next batch")
 
-if st.button('Re-run'):
-    st.session_state['ind2']==False
-    pdf = FPDF('L', 'mm', 'A4') #create an A-4 size pdf document
-    vImage = []    
-    st.write(scameterCheck(df))
-    st.header('Return result')
-    #Display and setup the return result dataframe
-    st.dataframe(df)
-    df=df
-    st.session_state['df'] = df
-    vImage = vImage
-    ind2=True
-    st.session_state['ind2'] = True    
+if st.button('Clear All'):
+    caching.clear__cache()  
 else:
     ''
     
