@@ -140,7 +140,7 @@ if upload_file is not None:
     st.write(df)
     st.header('STEP 3. Check the Scameter')
 
-if st.button('Check Scameter'):
+if st.button('Check Scameter') is not None:
     pdf = FPDF('L', 'mm', 'A4') #create an A-4 size pdf document
     vImage = []
         
