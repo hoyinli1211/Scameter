@@ -148,7 +148,7 @@ if st.button('PDF'):
         pdf2.cell(50,50,str(i), 0,0,'C')
         #pdf2.image(i)
         pdf2.line(x1=85, y1=27.5, x2=125, y2=27.5)
-        pdf2.output('output.pdf','F')
+    pdf2.output('output.pdf','F')
     
     with open("output.pdf", "rb") as pdf_file:
         PDFbyte = pdf_file.read()
