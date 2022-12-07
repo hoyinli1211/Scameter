@@ -37,8 +37,6 @@ if 'ind1' not in st.session_state:
     st.session_state['ind1'] = False
 if 'ind2' not in st.session_state:
     st.session_state['ind2'] = False
-if 'df' not in st.session_state:
-    st.session_state['df'] = []
 
 st.write(st.session_state) 
     
