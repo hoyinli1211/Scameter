@@ -146,30 +146,31 @@ if st.session_state['ind0']==False:
     st.header('STEP 2. Review the imported dataframe')
     st.header('STEP 3. Check the Scameter')  
     st.write(st.session_state) 
-elif st.session_state['ind0']==True and st.session_state['ind1']==False:
-    #extension of file
-    ext = os.path.splitext(upload_file.name)[1].lower()
-    #Check the upload file extension and read the file to a dataframe using pandas
-    if ext == '.xlsx':
-        #xlsx
-        df = pd.read_excel(upload_file, dtype=str)
-    elif ext == '.csv':
-        df = pd.read_csv(upload_file, dtype=str)
+else: 
+    if st.session_state['ind1']==False:
+        #extension of file
+        ext = os.path.splitext(upload_file.name)[1].lower()
+        #Check the upload file extension and read the file to a dataframe using pandas
+        if ext == '.xlsx':
+            #xlsx
+            df = pd.read_excel(upload_file, dtype=str)
+        elif ext == '.csv':
+            df = pd.read_csv(upload_file, dtype=str)
+        else:
+            err = "<font color='red'>error: the file not in xlsx/csv format</font>"
+            st.markdown(f'<p style= "color:#ff0000;">error: the file not in xlsx/csv format</p>', unsafe_allow_html=True)
+        #Create a section for the dataframe
+        st.header('STEP 2. Review the imported dataframe')
+        st.write(df)
+        st.header('STEP 3. Check the Scameter')
+        ind1=True
+        st.session_state['ind1'] = True
+        st.write(st.session_state) 
     else:
-        err = "<font color='red'>error: the file not in xlsx/csv format</font>"
-        st.markdown(f'<p style= "color:#ff0000;">error: the file not in xlsx/csv format</p>', unsafe_allow_html=True)
-    #Create a section for the dataframe
-    st.header('STEP 2. Review the imported dataframe')
-    st.write(df)
-    st.header('STEP 3. Check the Scameter')
-    ind1=True
-    st.session_state['ind1'] = True
-    st.write(st.session_state) 
-else:
-    st.header('STEP 2. Review the imported dataframe')
-    st.write(df)
-    st.header('STEP 3. Check the Scameter')
-    st.write(st.session_state) 
+        st.header('STEP 2. Review the imported dataframe')
+        st.write(df)
+        st.header('STEP 3. Check the Scameter')
+        st.write(st.session_state) 
     
 
 if st.session_state['df']==[]:
