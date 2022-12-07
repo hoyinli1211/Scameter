@@ -30,7 +30,13 @@ import cv2
 import zipfile
 from fpdf import FPDF
 
-#required function
+#initialization of session state
+if 'ind1' not in st.session_state:
+    st.session_state['ind1'] = False
+if 'ind2' not in st.session_state:
+    st.session_state['ind2'] = False
+
+#required function(s)
 def scameterCheck(frame):
     if isinstance(frame, pd.DataFrame):
         #Input the weblink
@@ -142,8 +148,9 @@ if upload_file is not None:
     st.write(df)
     st.header('STEP 3. Check the Scameter')
     ind1=True
+    st.session_state['ind1'] = True
   
-if st.button('Check Scameter') and ind2==False:
+if st.button('Check Scameter') and st.session_state['ind2']==False:
     pdf = FPDF('L', 'mm', 'A4') #create an A-4 size pdf document
     vImage = []
         
@@ -153,7 +160,8 @@ if st.button('Check Scameter') and ind2==False:
     st.dataframe(df)
     df=df
     vImage = vImage
-    ind2=True  
+    ind2=True
+    st.session_state['ind2'] = True
 else:
     abc=''
     
