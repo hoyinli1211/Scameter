@@ -186,13 +186,13 @@ else:
 st.header('STEP 4. Export return result and audit log on screenshot after review')
 if ind1==True and ind2==True:
     st.write(df)
-st.download_button("Download CSV",
-                        df.to_csv(index=False),
-                        mime='text/csv') 
+    st.download_button("Download CSV",
+                            df.to_csv(index=False),
+                            mime='text/csv') 
 
-with open("output1.pdf", "rb") as pdf_file:
-    PDFbyte = pdf_file.read()
-st.download_button("Download Image screenshot PDF",
-                   data=PDFbyte,
-                   file_name="audittrail.pdf",
-                   mime='application/octet-stream') 
+    with open("output1.pdf", "rb") as pdf_file:
+        PDFbyte = pdf_file.read()
+    st.download_button("Download Image screenshot PDF",
+                       data=PDFbyte,
+                       file_name="audittrail.pdf",
+                       mime='application/octet-stream') 
