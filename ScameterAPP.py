@@ -131,6 +131,17 @@ if upload_file is not None:
     st.session_state['ind0'] = True
 else:
     st.session_state['ind0'] = False
+    #extension of file
+    ext = os.path.splitext(upload_file.name)[1].lower()
+    #Check the upload file extension and read the file to a dataframe using pandas
+    if ext == '.xlsx':
+        #xlsx
+        df = pd.read_excel(upload_file, dtype=str)   
+    elif ext == '.csv':
+        df = pd.read_csv(upload_file, dtype=str)    
+    else:
+        err = "<font color='red'>error: the file not in xlsx/csv format</font>"
+        st.markdown(f'<p style= "color:#ff0000;">error: the file not in xlsx/csv format</p>', unsafe_allow_html=True)
 
 temp_file = 'template.xlsx'
 df_temp = pd.read_excel(temp_file)
