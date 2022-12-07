@@ -176,7 +176,7 @@ if st.session_state['ind1']==True and st.session_state['ind2']==True:
     st.download_button("Download Output",
                         data=df,
                         file_name=date.today().strftime("%Y%m%d")+".xlsx",
-                        mime='xlsx') 
+                        mime='application/vnd.ms-excel') 
     st.write(st.session_state['df'])
     with open("output1.pdf", "rb") as pdf_file:
         PDFbyte = pdf_file.read()
