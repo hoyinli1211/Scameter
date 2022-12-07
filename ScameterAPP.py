@@ -185,7 +185,7 @@ st.download_button("Download CSV",
 
 with open("output1.pdf", "rb") as pdf_file:
     PDFbyte = pdf_file.read()
-st.image(vImage)
+st.image(vImage[0])
 st.download_button("Download Image screenshot PDF",
                    data=PDFbyte,
                    file_name="audittrail.pdf",
