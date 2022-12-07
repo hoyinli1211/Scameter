@@ -103,7 +103,7 @@ def scameterCheck(frame):
             frame['RiskRating'].iloc[i] = RiskRating
             frame['JobID'].iloc[i] = JobID
         
-        df.output('output1.pdf','F')
+        pdf.output('output1.pdf','F')
         
     else: print("input not dataframe")
 
