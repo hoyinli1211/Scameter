@@ -166,7 +166,7 @@ else:
     abc=''
     
 st.header('STEP 4. Export return result and audit log on screenshot after review')
-if ind1==True and ind2==True:
+if st.session_state['ind1']==True and st.session_state['ind2']==True:
     st.download_button("Download CSV",
                         df.to_csv(index=False),
                         mime='text/csv') 
