@@ -176,7 +176,7 @@ else:
 if st.session_state['ind0']==False and st.session_state['ind1']==False and st.session_state['ind2']==False:
     pass
 elif st.session_state['ind0']==True and st.session_state['ind1']==True and st.session_state['ind2']==False:
-    if st.button('Check Scameter'):
+    if st.button('Check Scameter') and st.session_state['ind2']==False:
         pdf = FPDF('L', 'mm', 'A4') #create an A-4 size pdf document
         vImage = []
 
@@ -190,7 +190,7 @@ elif st.session_state['ind0']==True and st.session_state['ind1']==True and st.se
         ind2=True
         st.session_state['ind2'] = True
         st.write(st.session_state) 
-    else:
+    elif st.session_state['ind2']==True:
         st.write("Result already executed. Please refresh the page for checking next batch")
         st.write(st.session_state) 
 
