@@ -157,7 +157,7 @@ if st.button('Check Scameter'):
         pdf2.set_margins(0,0,0)
         pdf2.output('output.pdf','F')
         pdf2.set_font("Arial", size=12)
-        pdf2.cell(w=50,h=50,i, border=0, ln=1, align='', fill=FALSE, link='')
+        pdf2.cell(w=50,h=50,i, border=0, ln=1, align='', fill=False, link='')
         pdf2.image(i)
         pdf2.line(x1=85, y1=27.5, x2=125, y2=27.5)
     
