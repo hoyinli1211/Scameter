@@ -138,8 +138,6 @@ df_temp = pd.read_excel(temp_file)
 st.download_button("Download template file",
                       df_temp.to_csv(index=False),
                       mime='text/csv')
-ind1=False
-ind2=False
 
 if st.session_state['ind0']==False:
     st.header('STEP 2. Review the imported dataframe')
@@ -163,7 +161,6 @@ elif st.session_state['ind0']==True:
         st.write(df)
         df=df
         st.header('STEP 3. Check the Scameter')
-        ind1=True
         st.session_state['ind1'] = True
         st.write(st.session_state) 
     else:
@@ -174,7 +171,6 @@ if st.session_state['ind0']==True and st.session_state['ind1']==True and st.sess
     if st.button('Check Scameter') and st.session_state['ind2']==False:
         pdf = FPDF('L', 'mm', 'A4') #create an A-4 size pdf document
         vImage = []
-
         st.write(scameterCheck(df))
         st.header('Return result')
         #Display and setup the return result dataframe
@@ -185,9 +181,9 @@ if st.session_state['ind0']==True and st.session_state['ind1']==True and st.sess
         st.session_state['ind2'] = True
         st.session_state['indEnd'] = True
         st.write(st.session_state) 
-    elif st.session_state['ind2']==True:
-        st.write("Result already executed. Please refresh the page for checking next batch")
-        st.write(st.session_state) 
+ elif st.session_state['ind2']==True:
+      st.write("Result already executed. Please refresh the page for checking next batch")
+      st.write(st.session_state) 
 
 
 st.header('STEP 4. Export return result and audit log on screenshot after review')
