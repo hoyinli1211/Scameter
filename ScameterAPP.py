@@ -209,8 +209,7 @@ clearAll = st.button("Clear All")
 if clearAll:
     if 'indEnd' in st.session_state:
         del st.session_state['indEnd']
-        st.write('Deleted indEnd')
     else:
-        st.write('Nothing')
+        pass
 
 #End of Script
