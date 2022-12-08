@@ -31,7 +31,7 @@ import zipfile
 from fpdf import FPDF
 
 #initialization of session state
-if 'indEnd' not in st.session_state:
+if 'indEnd' not in st.session_state or st.session_state['df'] != True:
 #if 'ind0' not in st.session_state:
     st.session_state['ind0'] = False
 #if 'ind1' not in st.session_state:
@@ -205,4 +205,10 @@ if (st.session_state['ind1']==True and st.session_state['ind2']==True and st.ses
 else:
     st.write(st.session_state) 
 
+if st.button("Clear All"):    
+    st.session_state['ind0'] = False
+    st.session_state['ind1'] = False
+    st.session_state['ind2'] = False
+else:
+    pass
 #End of Script
