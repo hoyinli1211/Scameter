@@ -206,5 +206,7 @@ else:
     st.write(st.session_state) 
 
 clearAll = st.button("Clear All")    
-    
+if clearAll:
+    st.write('Hello World')
+
 #End of Script
