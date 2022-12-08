@@ -38,8 +38,8 @@ if 'indEnd' not in st.session_state:
     st.session_state['ind1'] = False
 #if 'ind2' not in st.session_state:
     st.session_state['ind2'] = False
+    st.session_state['df']=[]
 
-st.write(df)
 st.write(st.session_state) 
     
 #required function(s)
@@ -177,6 +177,7 @@ if True==True:
         #Display and setup the return result dataframe
         st.dataframe(df)
         df=df
+        st.session_state['df']=df
         vImage = vImage
         ind2=True
         st.session_state['ind2'] = True
