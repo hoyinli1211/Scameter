@@ -182,16 +182,15 @@ if st.session_state['ind0']==True and st.session_state['ind1']==True and st.sess
         st.session_state['indEnd'] = True
         st.write(st.session_state) 
  elif st.session_state['ind2']==True:
-      st.write("Result already executed. Please refresh the page for checking next batch")
-      st.write(st.session_state) 
-
+    st.write("Result already executed. Please refresh the page for checking next batch")
+    st.write(st.session_state) 
 
 st.header('STEP 4. Export return result and audit log on screenshot after review')
 if (st.session_state['ind1']==True and st.session_state['ind2']==True and st.session_state['indEnd'] == True):
+    st.write(df)
     st.download_button("Download Output",
                         data=df.to_csv(index=False, header=True),
                         mime='text/csv') 
-    st.write(df)
     with open("output1.pdf", "rb") as pdf_file:
         PDFbyte = pdf_file.read()
     st.download_button("Download Image screenshot PDF",
