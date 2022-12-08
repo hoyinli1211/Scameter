@@ -184,7 +184,7 @@ if True==True:
         st.session_state['indEnd'] = True
         st.write(st.session_state)
     else:
-        df=df
+        pass
 elif st.session_state['ind2']==True:
     st.write("Result already executed. Please refresh the page for checking next batch")
     st.write(st.session_state) 
