@@ -180,7 +180,9 @@ if st.session_state['ind0']==True and st.session_state['ind1']==True and st.sess
         ind2=True
         st.session_state['ind2'] = True
         st.session_state['indEnd'] = True
-        st.write(st.session_state) 
+        st.write(st.session_state)
+    else:
+        pass
  elif st.session_state['ind2']==True:
     st.write("Result already executed. Please refresh the page for checking next batch")
     st.write(st.session_state) 
