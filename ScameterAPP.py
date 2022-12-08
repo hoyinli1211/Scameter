@@ -31,14 +31,14 @@ import zipfile
 from fpdf import FPDF
 
 #initialization of session state
-if upload_file is None:
+if 'indEnd' not in st.session_state:
 #if 'ind0' not in st.session_state:
     st.session_state['ind0'] = False
 #if 'ind1' not in st.session_state:
     st.session_state['ind1'] = False
 #if 'ind2' not in st.session_state:
     st.session_state['ind2'] = False
-
+    
 st.write(st.session_state) 
     
 #required function(s)
@@ -183,6 +183,7 @@ if st.session_state['ind0']==True and st.session_state['ind1']==True and st.sess
         vImage = vImage
         ind2=True
         st.session_state['ind2'] = True
+        st.session_state['indEnd'] = True
         st.write(st.session_state) 
     elif st.session_state['ind2']==True:
         st.write("Result already executed. Please refresh the page for checking next batch")
@@ -190,7 +191,7 @@ if st.session_state['ind0']==True and st.session_state['ind1']==True and st.sess
 
 
 st.header('STEP 4. Export return result and audit log on screenshot after review')
-if (st.session_state['ind1']==True and st.session_state['ind2']==True):
+if (st.session_state['ind1']==True and st.session_state['ind2']==True and st.session_state['indEnd'] == True):
     st.download_button("Download Output",
                         data=df.to_csv(index=False, header=True),
                         mime='text/csv') 
