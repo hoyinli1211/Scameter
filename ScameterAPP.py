@@ -205,4 +205,6 @@ if (st.session_state['ind1']==True and st.session_state['ind2']==True and st.ses
 else:
     st.write(st.session_state) 
 
+clearAll = st.button("Clear All")    
+    
 #End of Script
