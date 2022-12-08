@@ -206,7 +206,7 @@ else:
     st.write(st.session_state) 
 
 if st.button("Clear All"):    
-    del st.session_state['indEnd']
+    st.session_state['indEnd']=False
 else:
     pass
 #End of Script
