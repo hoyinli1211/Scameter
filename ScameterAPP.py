@@ -31,7 +31,7 @@ import zipfile
 from fpdf import FPDF
 
 #initialization of session state
-if 'indEnd' not in st.session_state or st.session_state['df'] != True:
+if 'indEnd' not in st.session_state or st.session_state['indEnd'] != True:
 #if 'ind0' not in st.session_state:
     st.session_state['ind0'] = False
 #if 'ind1' not in st.session_state:
