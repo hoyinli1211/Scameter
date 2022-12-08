@@ -208,5 +208,7 @@ else:
 clearAll = st.button("Clear All")    
 if clearAll:
     st.write('Hello World')
+    if 'indEnd' in st.session_state:
+        del st.session_state['indEnd']
 
 #End of Script
