@@ -38,7 +38,8 @@ if 'indEnd' not in st.session_state:
     st.session_state['ind1'] = False
 #if 'ind2' not in st.session_state:
     st.session_state['ind2'] = False
-    
+
+st.write(df)
 st.write(st.session_state) 
     
 #required function(s)
