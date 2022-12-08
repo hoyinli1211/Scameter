@@ -193,7 +193,7 @@ if st.session_state['ind1']==True and st.session_state['ind2']==True:
     st.download_button("Download Output",
                         data=df.to_csv(index=False, header=True),
                         mime='text/csv') 
-    st.write(st.session_state['df'])
+    st.write(df)
     with open("output1.pdf", "rb") as pdf_file:
         PDFbyte = pdf_file.read()
     st.download_button("Download Image screenshot PDF",
