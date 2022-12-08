@@ -189,7 +189,7 @@ if st.session_state['ind0']==True and st.session_state['ind1']==True and st.sess
 
 
 st.header('STEP 4. Export return result and audit log on screenshot after review')
-if (st.session_state['ind1']==True and st.session_state['ind2']==True) or df is not Null:
+if (st.session_state['ind1']==True and st.session_state['ind2']==True) or df is not None:
     st.download_button("Download Output",
                         data=df.to_csv(index=False, header=True),
                         mime='text/csv') 
