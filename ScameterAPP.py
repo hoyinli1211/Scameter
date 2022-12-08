@@ -31,12 +31,12 @@ import zipfile
 from fpdf import FPDF
 
 #initialization of session state
-#if 'ind0' not in st.session_state:
-st.session_state['ind0'] = False
-#if 'ind1' not in st.session_state:
-st.session_state['ind1'] = False
-#if 'ind2' not in st.session_state:
-st.session_state['ind2'] = False
+if 'ind0' not in st.session_state:
+    st.session_state['ind0'] = False
+if 'ind1' not in st.session_state:
+    st.session_state['ind1'] = False
+if 'ind2' not in st.session_state:
+    st.session_state['ind2'] = False
 
 st.write(st.session_state) 
     
