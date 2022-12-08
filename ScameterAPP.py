@@ -205,7 +205,8 @@ if (st.session_state['ind1']==True and st.session_state['ind2']==True and st.ses
 else:
     st.write(st.session_state) 
 
-if st.button("Clear All"):    
+if st.button("Clear All"):
+    upload_file = None
     st.session_state['ind0']=False
     st.session_state['ind1']=False
     st.session_state['ind2']=False
