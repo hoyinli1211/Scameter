@@ -176,9 +176,10 @@ elif st.session_state['ind2']==True:
 
 st.header('STEP 4. Export return result and audit log on screenshot after review')
 if (st.session_state['ind1']==True and st.session_state['ind2']==True and st.session_state['indEnd'] == True):
-    st.write(st.session_state['df'])
+    #st.write(st.session_state['df'])
     df = st.session_state['df']
     df['Value'] = df['Value'].astype("string")
+    st.write(df)
     st.download_button("Download Output",
                         data=df.to_csv(index=False, header=True),
                         mime='text/csv') 
