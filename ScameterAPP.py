@@ -31,6 +31,7 @@ import cv2
 from fpdf import FPDF
 from io import BytesIO
 from pyxlsb import open_workbook as open_xlsb
+import xlsxwriter
 
 #initialization of session state
 if 'indEnd' not in st.session_state:
