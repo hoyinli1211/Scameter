@@ -32,41 +32,26 @@ from fpdf import FPDF
 
 #initialization of session state
 if 'indEnd' not in st.session_state:
-#if 'ind0' not in st.session_state:
     st.session_state['ind0'] = False
-#if 'ind1' not in st.session_state:
     st.session_state['ind1'] = False
-#if 'ind2' not in st.session_state:
     st.session_state['ind2'] = False
     st.session_state['df']=[]
 
-st.write(st.session_state) 
+#st.write(st.session_state) 
     
 #required function(s)
 def scameterCheck(frame):
     if isinstance(frame, pd.DataFrame):
         #Input the weblink
         link = "https://cyberdefender.hk/en-us/"
-        
-        #Create instance of chrome
-        #firefoxOptions = Options()
-        #firefoxOptions.add_argument("--headless")
-        #driver = webdriver.Firefox(
-        #    options=firefoxOptions,
-        #    executable_path="/home/appuser/.conda/bin/geckodriver",
-        #)
-        
+               
         option = webdriver.ChromeOptions()
-        #options.add_argument("--window-size=1920,1080")
-        #options.add_argument('--no-sandbox')
-        #options.add_argument('--disable-dev-shm-usage')
         option.add_argument('-headless')
         option.add_argument("--remote-debugging-port=2212")
         option.add_argument('--no-sandbox')
         option.add_argument('--disable-dev-shm-usage')
         option.add_argument("start-maximized")
         driver = webdriver.Chrome(service= Service(ChromeDriverManager().install()), options=option)
-        #driver = webdriver.Chrome(ChromeDriverManager().install(), options=options)
         driver.implicitly_wait(0.5)
         
         frame['JobID'] = ""
@@ -143,7 +128,7 @@ st.download_button("Download template file",
 if st.session_state['ind0']==False:
     st.header('STEP 2. Review the imported dataframe')
     st.header('STEP 3. Check the Scameter')  
-    st.write(st.session_state) 
+    #st.write(st.session_state) 
 elif st.session_state['ind0']==True:
     if st.session_state['ind1']==False:
         #extension of file
@@ -163,7 +148,7 @@ elif st.session_state['ind0']==True:
         df=df
         st.header('STEP 3. Check the Scameter')
         st.session_state['ind1'] = True
-        st.write(st.session_state) 
+        #st.write(st.session_state) 
     else:
         df=st.session_state['df']
 
@@ -182,12 +167,12 @@ if True==True:
         ind2=True
         st.session_state['ind2'] = True
         st.session_state['indEnd'] = True
-        st.write(st.session_state)
+        #st.write(st.session_state)
     else:
         pass
 elif st.session_state['ind2']==True:
     st.write("Result already executed. Please refresh the page for checking next batch")
-    st.write(st.session_state) 
+    #st.write(st.session_state) 
 
 st.header('STEP 4. Export return result and audit log on screenshot after review')
 if (st.session_state['ind1']==True and st.session_state['ind2']==True and st.session_state['indEnd'] == True):
@@ -201,9 +186,9 @@ if (st.session_state['ind1']==True and st.session_state['ind2']==True and st.ses
                        data=PDFbyte,
                        file_name="audittrail.pdf",
                        mime='application/octet-stream') 
-    st.write(st.session_state) 
+    #st.write(st.session_state) 
 else:
-    st.write(st.session_state) 
+    #st.write(st.session_state) 
 
 clearAll = st.button("Clear All")    
 if clearAll:
