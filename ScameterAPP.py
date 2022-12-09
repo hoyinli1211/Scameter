@@ -27,8 +27,10 @@ import re
 from PIL import Image
 import glob
 import cv2
-import zipfile
+#import zipfile
 from fpdf import FPDF
+from io import BytesIO
+from pyxlsb import open_workbook as open_xlsb
 
 #initialization of session state
 if 'indEnd' not in st.session_state:
@@ -104,6 +106,18 @@ def scameterCheck(frame):
         
     else: print("input not dataframe")
 
+def to_excel(df):
+    output = BytesIO()
+    writer = pd.ExcelWriter(output, engine='xlsxwriter')
+    df.to_excel(writer, index=False, sheet_name='Sheet1')
+    workbook = writer.book
+    worksheet = writer.sheets['Sheet1']
+    format1 = workbook.add_format({'num_format': '0.00'}) 
+    worksheet.set_column('A:A', None, format1)  
+    writer.save()
+    processed_data = output.getvalue()
+    return processed_data
+        
 # Add a title and intro text
 st.title('Bulk checking on Scameter')
 st.text('This script is for educational purpose.')
@@ -180,11 +194,12 @@ if (st.session_state['ind1']==True and st.session_state['ind2']==True and st.ses
     df = st.session_state['df']
     df['Value'] = df['Value'].astype("string")
     st.write(df)
-    df_xlsx = df.to_excel("output.xlsx")
+    df_xlsx = to_excel(df)
     st.download_button("Download Output",
                        #data=df.to_csv(index=False, header=True),
                        data=df_xlsx,
-                       mime='text/csv') 
+                       #mime='text/csv'
+                      file_name='output.xlsx') 
     with open("output1.pdf", "rb") as pdf_file:
         PDFbyte = pdf_file.read()
     st.download_button("Download Image screenshot PDF",
