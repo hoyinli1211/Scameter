@@ -10,3 +10,4 @@ Image
 opencv-python
 FPDF
 pyxlsb
+xlsxwriter
