@@ -9,5 +9,4 @@ option
 Image
 opencv-python
 FPDF
-open_workbook
 pyxlsb
