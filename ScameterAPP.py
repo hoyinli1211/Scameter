@@ -180,9 +180,10 @@ if (st.session_state['ind1']==True and st.session_state['ind2']==True and st.ses
     df = st.session_state['df']
     df['Value'] = df['Value'].astype("string")
     st.write(df)
+    df_xlsx = df.to_excel("output.xlsx")
     st.download_button("Download Output",
                        #data=df.to_csv(index=False, header=True),
-                       data=df.to_excel("output.xlsx"),
+                       data=df_xlsx,
                        mime='text/csv') 
     with open("output1.pdf", "rb") as pdf_file:
         PDFbyte = pdf_file.read()
