@@ -188,6 +188,7 @@ if (st.session_state['ind1']==True and st.session_state['ind2']==True and st.ses
                        mime='application/octet-stream') 
     #st.write(st.session_state) 
 else:
+    pass
     #st.write(st.session_state) 
 
 clearAll = st.button("Clear All")    
